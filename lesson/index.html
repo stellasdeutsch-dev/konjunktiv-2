@@ -1,0 +1,1385 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Konjunktiv II без занудства: wäre, hätte, würde, анимации, тренажёры и тест.">
+<meta name="theme-color" content="#E4F33A">
+<meta property="og:title" content="Konjunktiv II по-человечески">
+<meta property="og:description" content="Грамматика всех ваших «бы». Разберём за 10 минут, с анимациями и тренажёрами.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../media/p1-home.webp">
+<link rel="icon" href="../favicon.png">
+<link rel="apple-touch-icon" href="../favicon.png">
+<title>Konjunktiv II по-человечески</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap">
+<style>
+:root{
+  --lime:#E4F33A;
+  --lime-deep:#CFDE22;
+  --ink:#131313;
+  --ink-2:#2A2A28;
+  --mute:#7A7A74;
+  --paper:#FFFFFF;
+  --mist:#F4F4F1;
+  --mist-2:#ECECE7;
+  --line:#E6E6E0;
+  --good:#1F8A4C;
+  --bad:#D2452F;
+  --r-lg:28px;
+  --r-md:20px;
+  --r-sm:12px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Urbanist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+b,strong{font-weight:700}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:16px}
+@media(min-width:720px){.wrap{padding-inline:32px}}
+
+/* ---------- type ---------- */
+.display{font-weight:300;font-size:clamp(42px,10.5vw,86px);line-height:1.02;letter-spacing:-.035em;margin:0;text-wrap:balance}
+.display b{font-weight:700}
+h2.h{font-weight:300;font-size:clamp(32px,7.4vw,56px);line-height:1.06;letter-spacing:-.03em;margin:0 0 18px;text-wrap:balance}
+h2.h b{font-weight:700}
+h3{font-size:22px;font-weight:600;letter-spacing:-.01em;line-height:1.2;margin:0 0 8px}
+.lead{font-size:18px;color:var(--ink-2);max-width:60ch}
+.muted{color:var(--mute)}
+.small{font-size:13.5px}
+.prose p{margin:0 0 14px;max-width:62ch;font-size:17px}
+.prose p.one{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.de{font-weight:600}
+
+/* ---------- atoms ---------- */
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--lime);color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.02em;padding:5px 10px;border-radius:7px}
+.chip.gray{background:var(--mist)}
+.chip.dark{background:var(--ink);color:var(--paper)}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:500;font-size:15px;padding:7px 7px 7px 20px;border-radius:14px;border:0;transition:transform .25s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn .ar{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--lime);color:var(--ink)}
+.btn .ar svg{width:18px;height:18px}
+.btn.lime{background:var(--lime);color:var(--ink)}
+.btn.lime .ar{background:var(--ink);color:var(--lime)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);padding:13px 20px}
+.link{font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--lime-deep)}
+.ib{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:11px;background:var(--ink);color:var(--lime);flex:none}
+.ib.l{background:var(--lime);color:var(--ink)}
+.ib svg{width:20px;height:20px}
+.card{background:var(--mist);border-radius:var(--r-lg);padding:24px}
+@media(min-width:720px){.card{padding:32px}}
+
+/* scroll-linked reveal: content is visible without it */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+    @keyframes rv{from{opacity:0;transform:translateY(36px) scale(.985)}}
+    .rv-x{animation:rvx linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+    @keyframes rvx{from{opacity:0;transform:translateX(40px)}}
+  }
+}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.sc{border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:19px;letter-spacing:-.02em}
+.brand img{width:34px;height:34px}
+.nav-links{display:none;gap:26px;font-size:14.5px;color:var(--ink-2)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--ink)}
+@media(min-width:900px){.nav-links{display:flex}}
+.nav .btn{font-size:14px;padding:5px 5px 5px 14px;gap:10px;border-radius:12px}
+.nav .btn .ar{width:32px;height:32px;border-radius:9px}
+
+/* ---------- hero ---------- */
+.hero{padding-block:34px 18px}
+.hero-grid{display:grid;gap:30px;align-items:center}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.02fr 1fr;gap:40px}}
+.hero .chip{margin-bottom:22px}
+.hero .lead{margin:22px 0 28px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero-cta .link{font-size:15px}
+.load>*{animation:up .9s var(--ease) both}
+.load>*:nth-child(2){animation-delay:.08s}.load>*:nth-child(3){animation-delay:.16s}.load>*:nth-child(4){animation-delay:.24s}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+
+.stage{position:relative;display:grid;place-items:center;padding-block:10px 20px;min-height:560px}
+.wave{position:absolute;left:-16px;right:-16px;top:64%;height:90px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.wave .side{display:flex;align-items:center;gap:4px;height:100%}
+.wave i{display:block;width:4px;border-radius:4px;background:var(--lime);height:20%;transform-origin:center;animation:bar 1.6s ease-in-out infinite}
+.stage.talk .wave i{animation-duration:.7s}
+@keyframes bar{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+
+.phone{position:relative;z-index:2;width:min(318px,82vw);aspect-ratio:9/18.6;background:var(--paper);border:10px solid #111;border-radius:50px;box-shadow:0 40px 80px -30px rgba(20,20,10,.35),0 0 0 1.5px #3a3a3a inset;display:flex;flex-direction:column;padding:14px 16px 16px;overflow:hidden}
+.phone .island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:28px;background:#0c0c0c;border-radius:20px}
+.phone .status{display:flex;justify-content:space-between;font-size:13px;font-weight:700;padding:2px 10px 0;height:26px}
+.phone .status .sig{display:flex;gap:4px;align-items:center}
+.phone .status .sig i{display:block;width:3px;background:#111;border-radius:1px}
+.p-head{display:flex;align-items:center;justify-content:space-between;margin:14px 0 18px;font-size:13px;font-weight:500}
+.p-head .sq{width:34px;height:34px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center}
+.p-head .sq svg{width:14px;height:14px}
+.avatar{width:54px;height:54px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 0 0 4px #fff,0 0 0 5px var(--line)}
+.avatar img{width:34px;height:34px}
+.p-msg{font-size:23px;line-height:1.24;font-weight:300;letter-spacing:-.015em;margin:16px 0 8px;min-height:3.8em}
+.p-msg b{font-weight:700}
+.p-msg .w{display:inline-block;animation:wIn .55s var(--ease) both}
+@keyframes wIn{from{opacity:0;transform:translateY(10px);filter:blur(5px)}}
+.p-tr{font-size:13px;color:var(--mute);min-height:2.6em;transition:opacity .4s}
+.p-listen{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:10px}
+.p-listen .pill{font-size:12px;background:var(--mist);padding:5px 12px;border-radius:20px;border:1px solid var(--line)}
+.p-mic{width:44px;height:44px;border-radius:50%;background:#111;display:grid;place-items:center;margin:14px auto;color:#fff}
+.p-mic svg{width:18px;height:18px}
+.p-input{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:18px;padding:6px 6px 6px 14px;font-size:13.5px}
+.p-input .txt{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-2)}
+.p-input .txt::after{content:"";display:inline-block;width:1.5px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:1px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.p-send{width:36px;height:36px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;transition:transform .2s}
+.p-send.go{transform:scale(.82)}
+.p-send svg{width:15px;height:15px}
+.tilt-note{position:absolute;z-index:3;right:0;top:40px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:13px;max-width:170px;box-shadow:0 20px 40px -24px rgba(0,0,0,.25);display:none}
+@media(min-width:560px){.tilt-note{display:block}}
+.tilt-note b{display:block;font-size:14px;margin-bottom:2px}
+
+/* stat cards */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr);gap:16px}}
+.stat{border-radius:var(--r-md);padding:20px 18px 18px;background:var(--mist);display:flex;flex-direction:column;min-height:190px}
+.stat.l{background:var(--lime)}
+.stat.d{background:var(--ink);color:var(--paper)}
+.stat .n{font-size:clamp(56px,13vw,82px);font-weight:300;line-height:.95;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.stat p{margin:auto 0 0;font-size:15px;line-height:1.35}
+.stats .stat:first-child{grid-column:1/-1}
+@media(min-width:760px){.stats .stat:first-child{grid-column:auto}}
+
+/* sections */
+section{padding-block:56px}
+@media(min-width:900px){section{padding-block:84px}}
+.sec-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}
+.sec-top .lbl{font-size:18px;font-weight:400;letter-spacing:-.01em}
+.num{display:grid;place-items:center;min-width:44px;height:44px;border-radius:11px;background:var(--lime);font-weight:500;font-size:16px;font-variant-numeric:tabular-nums}
+.split{display:grid;gap:28px}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
+
+/* quote */
+.quote{position:relative;font-size:clamp(27px,6vw,44px);font-weight:300;line-height:1.2;letter-spacing:-.025em;margin:0;padding-top:30px;text-wrap:balance}
+.quote::before{content:"\201C";position:absolute;top:-18px;left:-4px;font-size:84px;font-weight:800;line-height:1;color:var(--ink)}
+.quote b{font-weight:700}
+.who{display:flex;align-items:center;gap:14px;margin-top:26px}
+.who .av{width:54px;height:54px;border-radius:12px;background:var(--lime);display:grid;place-items:center}
+.who .av img{width:36px;height:36px}
+.who span{display:block;font-size:13.5px;color:var(--mute)}
+.who strong{font-weight:500;font-size:18px}
+
+/* problem / solution folder */
+.ps{display:grid;gap:18px;margin-top:40px}
+@media(min-width:760px){.ps{grid-template-columns:1fr 1fr;align-items:end}}
+.prob{background:var(--mist);border-radius:var(--r-lg);padding:26px;min-height:300px;display:flex;flex-direction:column}
+.prob .ib{background:var(--lime);color:var(--ink);font-weight:800;font-size:20px}
+.prob h3,.fold h3{margin-top:auto;padding-top:60px}
+.fold{position:relative;background:var(--lime);border-radius:0 var(--r-lg) var(--r-lg) var(--r-lg);padding:26px;min-height:300px;display:flex;flex-direction:column;margin-top:46px}
+.fold .tab{position:absolute;left:0;bottom:100%;height:48px;width:58%;max-width:240px;background:var(--lime);border-radius:22px 0 0 0;padding:14px 0 0 26px;font-size:16px;font-weight:500;clip-path:polygon(0 0,78% 0,100% 100%,0 100%)}
+.fold .tab::after{content:"";position:absolute}
+.fold .ib{background:var(--ink);color:var(--lime)}
+.fold p,.prob p{margin:0;color:var(--ink-2);font-size:16px}
+
+/* verb machine */
+.machine{background:var(--mist);border-radius:var(--r-lg);padding:20px;overflow:hidden}
+@media(min-width:720px){.machine{padding:32px}}
+.vchips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.vchips::-webkit-scrollbar{display:none}
+.vchip{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:9px 14px;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.vchip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.vchip small{font-weight:500;opacity:.55;margin-left:4px;font-size:11px}
+.vstage{background:var(--paper);border-radius:var(--r-md);margin-top:16px;padding:26px 18px 22px;text-align:center;position:relative;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.vstep-l{font-size:13px;color:var(--mute);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.vword{font-size:clamp(52px,15vw,104px);font-weight:300;letter-spacing:-.03em;line-height:1.05;margin:10px 0 8px;display:flex;justify-content:center;flex-wrap:wrap;gap:0}
+.vword .ch{display:inline-block;padding:0 .02em}
+.vword .ch.chg{background:var(--lime);border-radius:10px;animation:pop .55s var(--ease) both}
+.vword .ch.in{animation:pop .5s var(--ease) both}
+@keyframes pop{0%{opacity:0;transform:translateY(-22px) scale(1.25)}}
+.vword.fin{font-weight:600}
+.vold{font-size:20px;color:var(--mute);text-decoration:line-through;height:26px}
+.vnote{font-size:15px;color:var(--ink-2);min-height:44px;max-width:34ch;margin:0 auto}
+.vtag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:5px 10px;border-radius:8px;margin-top:8px}
+.vtag.ok{background:var(--lime)}
+.vtag.no{background:var(--ink);color:var(--paper)}
+.vprog{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:16px}
+.vprog i{height:5px;border-radius:5px;background:var(--mist-2);transition:background .35s}
+.vprog i.on{background:var(--ink)}
+.vlabels{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:6px;font-size:11px;color:var(--mute);text-align:left}
+@media(max-width:480px){.vlabels{display:none}}
+.vctl{display:flex;gap:10px;justify-content:space-between;margin-top:16px}
+.vctl .btn{padding:6px 6px 6px 16px}
+
+.callout{display:flex;gap:16px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:20px;margin-top:18px}
+.callout p{margin:0}
+
+/* spec rows (typography sheet look) */
+.spec{margin-top:10px}
+.spec-row{display:grid;grid-template-columns:1fr auto;align-items:end;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}
+.spec-row:first-child{border-top:1px solid var(--line)}
+.spec-row .big{font-size:clamp(30px,7vw,44px);font-weight:300;letter-spacing:-.02em;line-height:1}
+.spec-row .big em{font-style:normal;background:var(--lime);border-radius:6px;padding:0 4px}
+.spec-row .rt{text-align:right;font-size:17px;line-height:1.2}
+.spec-row .rt sup{font-size:12px;color:var(--mute);margin-left:4px;vertical-align:super}
+.spec-row .rt small{display:block;font-size:12.5px;color:var(--mute);margin-top:4px}
+
+/* conjugation */
+.conj{background:var(--ink);color:var(--paper);border-radius:var(--r-lg);padding:22px;margin-top:22px}
+.tabs{display:flex;gap:6px;background:rgba(255,255,255,.08);padding:4px;border-radius:14px;width:max-content;max-width:100%;overflow-x:auto}
+.tabs button{border:0;background:transparent;color:inherit;padding:8px 14px;border-radius:10px;font-weight:600;font-size:14px;opacity:.7}
+.tabs button[aria-selected="true"]{background:var(--lime);color:var(--ink);opacity:1}
+.conj-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:20px;font-size:19px}
+.conj-grid div{display:flex;gap:10px;align-items:baseline;animation:up .5s var(--ease) both}
+.conj-grid span{color:rgba(255,255,255,.5);font-size:14px;min-width:62px}
+.conj-grid mark{background:var(--lime);color:var(--ink);border-radius:5px;padding:0 3px}
+
+/* time route */
+.route{background:var(--mist);border-radius:var(--r-lg);padding:18px 18px 22px;overflow:hidden}
+@media(min-width:720px){.route{padding:28px}}
+.seg{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;padding:9px 16px;border-radius:10px;font-weight:600;font-size:14.5px;transition:background .25s,color .25s}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.route svg{width:100%;height:auto;display:block;margin:6px 0 4px}
+.route .blob{transition:fill .5s}
+.route .blob.on{fill:var(--lime)}
+.route .blob:not(.on){fill:var(--mist-2)}
+.sent{font-size:clamp(24px,5.6vw,36px);font-weight:300;letter-spacing:-.02em;line-height:1.3;min-height:2.7em}
+.sent .w{display:inline-block;margin-right:.26em;animation:wIn .5s var(--ease) both}
+.sent .w.hl{font-weight:600;background:linear-gradient(transparent 58%,var(--lime) 58%)}
+.sent-tr{color:var(--ink-2);margin:6px 0 14px;min-height:1.6em}
+.formula{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px;font-weight:600}
+.formula span{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 9px}
+.formula span.k{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mini{background:var(--paper);border-radius:var(--r-md);padding:18px;margin-top:16px;font-size:15px}
+.mini .de{font-size:19px;display:block;margin:4px 0 2px}
+
+/* situations carousel */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(84%,330px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 18px;margin-inline:-16px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+@media(min-width:720px){.rail{margin-inline:-32px;padding-inline:32px}}
+@media(min-width:1100px){.rail.grid4{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);overflow:visible;margin-inline:0;padding-inline:0}}
+.sit{scroll-snap-align:start;background:var(--mist);border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;min-height:300px}
+.sit .qb{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:22px;font-weight:800;line-height:1;padding-top:8px}
+.sit:nth-child(odd) .qb{background:var(--ink);color:var(--paper)}
+.sit:nth-child(even) .qb{background:var(--lime)}
+.sit h3{font-size:18px;margin:16px 0 10px}
+.sit .ex{font-size:20px;line-height:1.3;font-weight:300;letter-spacing:-.01em}
+.sit .ex b{font-weight:700}
+.sit .tr{font-size:14px;color:var(--mute);margin-top:4px}
+.sit .nt{margin-top:auto;padding-top:16px;font-size:14.5px;color:var(--ink-2);display:flex;gap:10px;align-items:flex-start}
+.sit .nt i{flex:none;width:22px;height:22px;border-radius:50%;overflow:hidden;background:var(--lime);display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:800}
+.rail-hint{font-size:13px;color:var(--mute);display:flex;align-items:center;gap:6px}
+@media(min-width:1100px){.rail-hint{display:none}}
+
+/* politeness */
+.polite{background:var(--ink);color:var(--paper);border-radius:var(--r-lg);padding:24px;overflow:hidden;position:relative}
+@media(min-width:720px){.polite{padding:36px}}
+.pol-lvl{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--ink);border-radius:8px;padding:5px 10px;font-size:13px;font-weight:700}
+.pol-say{font-size:clamp(28px,7vw,52px);font-weight:300;letter-spacing:-.025em;line-height:1.12;margin:18px 0 10px;min-height:2.3em}
+.pol-say .w{display:inline-block;margin-right:.24em;animation:wIn .45s var(--ease) both}
+.pol-say .w.k{color:var(--lime);font-weight:600}
+.pol-note{color:rgba(255,255,255,.72);min-height:3em;max-width:52ch}
+.meter{margin-top:22px}
+.meter-bar{height:12px;border-radius:12px;background:rgba(255,255,255,.12);overflow:hidden}
+.meter-bar i{display:block;height:100%;background:var(--lime);border-radius:12px;transition:width .6s var(--ease);width:20%}
+.meter-ends{display:flex;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,.55);margin-top:8px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;background:transparent;margin:18px 0 0;height:36px}
+input[type=range]::-webkit-slider-runnable-track{height:4px;background:rgba(255,255,255,.2);border-radius:4px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--lime);margin-top:-13px;border:4px solid var(--ink);box-shadow:0 0 0 1.5px var(--lime)}
+input[type=range]::-moz-range-track{height:4px;background:rgba(255,255,255,.2);border-radius:4px}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--lime);border:4px solid var(--ink)}
+
+/* word order */
+.wo{background:var(--mist);border-radius:var(--r-lg);padding:22px}
+@media(min-width:720px){.wo{padding:32px}}
+.wo-line{display:flex;flex-wrap:wrap;gap:10px 8px;align-items:center;min-height:130px;padding:24px 16px;background:var(--paper);border-radius:var(--r-md);justify-content:center}
+.tk{display:inline-block;font-size:clamp(22px,5.4vw,32px);font-weight:400;padding:6px 12px;border-radius:12px;background:var(--mist);transition:transform .75s var(--ease),opacity .4s,background .3s,color .3s;will-change:transform}
+.tk.v1{background:var(--lime);font-weight:600}
+.tk.v2{background:var(--ink);color:var(--paper);font-weight:600}
+.tk.p{background:transparent;padding:6px 2px;margin-left:-8px}
+.tk.strike{opacity:.3;text-decoration:line-through}
+.tk.gone{display:none}
+.tk.enter{animation:tkIn .55s var(--ease) both}
+@keyframes tkIn{from{opacity:0;transform:translateY(-16px) scale(.9)}}
+.wo-cap{font-size:17px;margin:18px 0 16px;min-height:3.2em;max-width:60ch}
+.wo-ctl{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.dots{display:flex;gap:8px}
+.dots button{width:40px;height:40px;border-radius:11px;border:1px solid var(--line);background:var(--paper);font-weight:600}
+.dots button[aria-current="true"]{background:var(--lime);border-color:var(--lime)}
+
+/* builder */
+.builder{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;box-shadow:0 30px 60px -40px rgba(0,0,0,.25)}
+@media(min-width:720px){.builder{padding:32px}}
+.b-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.b-ru{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:14px 0 16px}
+.b-ans{min-height:92px;background:var(--mist);border-radius:var(--r-md);padding:14px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;border:2px solid transparent;transition:border-color .3s,background .3s}
+.b-ans.ok{border-color:var(--lime-deep);background:#F7FBD9}
+.b-ans.err{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+.b-ans:empty::before{content:"Нажимайте на слова внизу";color:var(--mute);font-size:14.5px;padding:8px 4px}
+.b-pool{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.b-tok{border:1px solid var(--line);background:var(--paper);border-radius:11px;padding:9px 14px;font-weight:600;font-size:16px;animation:tkIn .35s var(--ease) both;box-shadow:0 2px 0 var(--line)}
+.b-ans .b-tok{background:var(--paper)}
+.b-msg{min-height:1.6em;font-size:15px;margin-bottom:14px}
+.b-msg.ok{color:var(--good)}
+.b-msg.err{color:var(--bad)}
+.b-ctl{display:grid;grid-template-columns:1fr 2fr;gap:10px}
+.b-ctl button{border:0;border-radius:14px;padding:15px;font-weight:600;font-size:15px}
+.b-reset{background:var(--mist)}
+.b-check{background:var(--ink);color:var(--paper)}
+.b-check.next{background:var(--lime);color:var(--ink)}
+
+/* quiz */
+.quiz{background:var(--mist);border-radius:var(--r-lg);padding:22px}
+@media(min-width:720px){.quiz{padding:32px}}
+.q-top{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--mute)}
+.q-bar{height:5px;background:var(--mist-2);border-radius:5px;margin:10px 0 22px;overflow:hidden}
+.q-bar i{display:block;height:100%;background:var(--ink);transition:width .5s var(--ease)}
+.q-q{font-size:clamp(24px,5.6vw,34px);font-weight:300;letter-spacing:-.02em;line-height:1.25;margin-bottom:18px}
+.q-q .gap{display:inline-block;min-width:3.6em;border-bottom:2.5px solid var(--ink);text-align:center;font-weight:600}
+.q-q .gap.ok{background:var(--lime);border-color:var(--lime-deep);border-radius:6px 6px 0 0}
+.q-opts{display:grid;gap:10px}
+@media(min-width:620px){.q-opts{grid-template-columns:repeat(3,1fr)}}
+.q-opt{border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:15px 16px;font-weight:600;font-size:17px;text-align:left;transition:background .25s,border-color .25s,transform .2s}
+.q-opt:hover:not(:disabled){transform:translateY(-2px)}
+.q-opt.ok{background:var(--lime);border-color:var(--lime-deep)}
+.q-opt.bad{background:#FBE3DE;border-color:#F0B6AA;color:#7A2415}
+.q-opt:disabled{cursor:default}
+.q-exp{background:var(--paper);border-radius:var(--r-md);padding:18px;margin-top:16px;font-size:15.5px;animation:up .45s var(--ease) both}
+.q-exp strong{display:block;margin-bottom:4px}
+.q-next{margin-top:16px}
+.q-end{text-align:center;padding:20px 0}
+.q-end .big{font-size:90px;font-weight:300;letter-spacing:-.04em;line-height:1}
+
+/* cheat sheet + poster */
+.cheat{display:grid;gap:12px}
+@media(min-width:620px){.cheat{grid-template-columns:1fr 1fr}}
+.ch-card{background:var(--mist);border-radius:var(--r-md);padding:18px}
+.ch-card .t{font-size:13px;font-weight:600;color:var(--mute);text-transform:uppercase;letter-spacing:.05em}
+.ch-card .f{font-size:18px;font-weight:600;margin:6px 0 4px;line-height:1.3}
+.ch-card .f mark{background:var(--lime);border-radius:5px;padding:0 3px}
+.ch-card .e{font-size:15px;color:var(--ink-2)}
+.poster-wrap{display:grid;place-items:center;background:var(--mist);border-radius:var(--r-lg);padding:0 20px 40px;overflow:hidden}
+.wires{display:flex;justify-content:space-between;width:min(300px,70vw);height:70px}
+.wires i{position:relative;width:2px;background:#9A9A94;margin-inline:22px}
+.wires i::after{content:"";position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:16px;height:12px;background:#222;border-radius:2px}
+.poster{width:min(300px,70vw);aspect-ratio:3/4.1;background:var(--ink);position:relative;overflow:hidden;box-shadow:0 30px 50px -30px rgba(0,0,0,.45);transform-origin:top center;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-.8deg)}50%{transform:rotate(.8deg)}}
+.poster .roman{position:absolute;top:6%;left:0;right:0;text-align:center;font-size:clamp(120px,38vw,190px);font-weight:200;color:var(--lime);letter-spacing:-.05em;line-height:1}
+.poster svg{position:absolute;left:0;bottom:0;width:100%;height:58%}
+.poster .pt{position:absolute;left:9%;right:9%;bottom:9%;color:var(--ink)}
+.poster .pt small{font-size:10px;opacity:.6;display:block;margin-bottom:6px}
+.poster .pt div{font-size:clamp(26px,7.4vw,36px);font-weight:600;line-height:1.05;letter-spacing:-.02em}
+
+/* ===== AD ===== */
+.ad{background:var(--paper)}
+.ad-hero{background:var(--ink);color:var(--paper);border-radius:32px;padding:32px 22px;position:relative;overflow:hidden}
+@media(min-width:720px){.ad-hero{padding:56px}}
+.ad-hero h2.h{color:var(--paper)}
+.ad-hero .prose p{color:rgba(255,255,255,.82)}
+.ad-hero .prose p.one{color:var(--paper)}
+.ad-hero .glow{position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:var(--lime);filter:blur(10px);opacity:.95;animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-30px,40px) scale(.92)}}
+.ad-hero .inner{position:relative;z-index:1}
+.ad-hero .star{position:absolute;right:22px;top:22px;z-index:1;width:64px;height:64px;border-radius:16px;background:var(--ink);display:grid;place-items:center}
+.ad-hero .star svg{width:30px;height:30px;color:var(--lime);animation:spin 12s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.pains{display:grid;gap:18px;margin-top:34px}
+@media(min-width:860px){.pains{grid-template-columns:1fr 1fr}.pains .pain:last-child{grid-column:1/-1}}
+.pain{display:flex;flex-direction:column}
+.pain .was{background:var(--mist);border-radius:var(--r-lg) var(--r-lg) var(--r-lg) 0;padding:22px 22px 26px}
+.pain .was .k{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.pain .was h3{margin:8px 0 6px;font-size:21px}
+.pain .was p{margin:0;color:var(--ink-2)}
+.pain .now{position:relative;background:var(--lime);border-radius:0 var(--r-lg) var(--r-lg) var(--r-lg);padding:20px 22px 22px;margin-top:40px}
+.pain .now .tab{position:absolute;left:0;bottom:calc(100% - 1px);height:42px;width:190px;background:var(--lime);border-radius:18px 0 0 0;padding:11px 0 0 22px;font-weight:600;font-size:15px;clip-path:polygon(0 0,76% 0,100% 100%,0 100%)}
+.pain .now p{margin:0;font-size:16px}
+.pain .now .row{display:flex;gap:14px;align-items:flex-start}
+.pain .now .ib{width:34px;height:34px;border-radius:9px}
+.pain .now .ib svg{width:16px;height:16px}
+
+.ad-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+@media(min-width:860px){.ad-stats{grid-template-columns:repeat(4,1fr);gap:16px}}
+.ad-stats .stat{min-height:170px}
+.ad-stats .stat .n{font-size:clamp(46px,11vw,70px)}
+
+/* media showcase */
+.show{margin-top:56px}
+.browser{background:var(--mist);border-radius:var(--r-lg);padding:10px;margin-top:18px}
+.browser .bar{display:flex;gap:6px;padding:6px 8px 10px;align-items:center}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#D5D5CF}
+.browser .bar span{margin-left:10px;font-size:12px;color:var(--mute);background:var(--paper);border-radius:8px;padding:3px 10px;flex:1;max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.browser video{width:100%;border-radius:16px;background:#111;aspect-ratio:16/8.4;object-fit:cover}
+.vcap{margin-top:14px;font-size:16px;max-width:62ch;min-height:3em}
+.vtabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;background:var(--mist);padding:4px;border-radius:14px;width:max-content;max-width:100%}
+.vtabs::-webkit-scrollbar{display:none}
+.vtabs button{flex:none;border:0;background:transparent;padding:9px 14px;border-radius:10px;font-weight:600;font-size:14px;color:var(--ink-2)}
+.vtabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+
+.shots{display:grid;grid-auto-flow:column;grid-auto-columns:min(80%,420px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 16px 16px;margin:22px -16px 0;scrollbar-width:none}
+.shots::-webkit-scrollbar{display:none}
+@media(min-width:720px){.shots{margin-inline:-32px;padding-inline:32px}}
+.shot{scroll-snap-align:start;margin:0}
+.shot img{border-radius:18px;border:1px solid var(--line);aspect-ratio:1200/784;object-fit:cover;width:100%;background:var(--mist)}
+.shot figcaption{font-size:14px;margin-top:8px;color:var(--ink-2)}
+
+/* inside each guide (spec) */
+.inside{margin-top:56px}
+
+/* reviews */
+.revs{margin-top:56px;text-align:center}
+.revs h2.h{margin-inline:auto}
+.revs .chip{margin-bottom:14px}
+.rev-rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,420px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 16px 18px;margin:18px -16px 0;scrollbar-width:none;text-align:left}
+.rev-rail::-webkit-scrollbar{display:none}
+@media(min-width:720px){.rev-rail{margin-inline:-32px;padding-inline:32px}}
+.rev{scroll-snap-align:start;margin:0;background:var(--mist);border-radius:var(--r-md);padding:18px;display:flex;flex-direction:column;gap:12px}
+.rev .qb{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:22px;font-weight:800;padding-top:8px;background:var(--lime)}
+.rev:nth-child(even) .qb{background:var(--ink);color:var(--paper)}
+.rev img{border-radius:12px;width:100%;height:auto}
+.rev figcaption{font-size:14px;color:var(--ink-2)}
+
+/* pricing */
+.price{margin-top:64px}
+.plans{display:grid;gap:14px;margin-top:26px}
+@media(min-width:860px){.plans{grid-template-columns:1fr 1.25fr 1fr;align-items:stretch}}
+.plan{background:var(--mist);border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column;gap:6px}
+.plan .lv{font-size:14px;font-weight:600;color:var(--mute)}
+.plan .pr{font-size:64px;font-weight:300;letter-spacing:-.04em;line-height:1}
+.plan .pr sup{font-size:24px;vertical-align:top;margin-left:4px}
+.plan ul{list-style:none;padding:0;margin:12px 0 18px;display:grid;gap:8px;font-size:15px}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li::before{content:"";flex:none;width:18px;height:18px;border-radius:5px;background:var(--paper);margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23131313' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
+.plan .btn{margin-top:auto;justify-content:space-between}
+.plan.main{background:var(--lime);position:relative}
+.plan.main li::before{background-color:var(--ink);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E4F33A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E")}
+.plan.main .old{font-size:22px;text-decoration:line-through;opacity:.5;margin-left:8px;font-weight:400}
+.plan.main .badge{position:absolute;top:20px;right:20px}
+.brunch{margin-top:20px;font-size:17px;max-width:62ch}
+
+/* final */
+.final{margin-top:64px;background:var(--mist);border-radius:32px;padding:40px 22px;text-align:center}
+@media(min-width:720px){.final{padding:64px}}
+.final .ib{margin:0 auto 18px;background:var(--lime);color:var(--ink)}
+.final p{max-width:48ch;margin:0 auto 24px;color:var(--ink-2)}
+.final .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.tg{display:inline-flex;gap:8px;align-items:center;margin-top:18px;font-size:14px;color:var(--mute)}
+.tg code{font-family:inherit;font-weight:700;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:4px 10px;border-radius:8px;user-select:all}
+.tg button{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:4px 10px;font-size:13px}
+
+footer{padding-block:34px calc(34px + 84px);border-top:1px solid var(--line);margin-top:56px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;font-size:13.5px;color:var(--mute)}
+
+/* floating CTA */
+.fcta{position:fixed;left:12px;right:12px;bottom:0;z-index:50;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translateY(140%);transition:transform .5s var(--ease);pointer-events:none}
+.fcta.show{transform:none;pointer-events:auto}
+.fcta a{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:520px;margin:0 auto;background:var(--ink);color:var(--paper);text-decoration:none;border-radius:18px;padding:8px 8px 8px 18px;box-shadow:0 20px 40px -16px rgba(0,0,0,.45)}
+.fcta .t{font-size:14px;line-height:1.25}
+.fcta .t b{display:block;font-size:15px}
+.fcta .ar{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--lime);color:var(--ink);flex:none}
+.fcta .ar svg{width:20px;height:20px}
+
+body{margin:0}
+
+/* ===== extra motion & visuals ===== */
+.prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;pointer-events:none}
+.prog i{display:block;height:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+@supports (animation-timeline: scroll()){ .prog i{animation:grow linear both;animation-timeline:scroll(root)} @keyframes grow{to{transform:scaleX(1)}} }
+
+/* floating form pills around phone */
+.orb{position:absolute;z-index:3;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:8px 14px;font-weight:700;font-size:17px;box-shadow:0 18px 30px -18px rgba(0,0,0,.3);animation:bob 4.2s ease-in-out infinite}
+.orb.l{background:var(--lime);border-color:var(--lime-deep)}
+.orb.d{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.orb small{display:block;font-size:11px;font-weight:500;opacity:.6}
+.orb.o1{top:8%;left:0;animation-delay:-1s}
+.orb.o2{top:36%;right:0;animation-delay:-2.2s}
+.orb.o3{bottom:8%;left:4%;animation-delay:-3.1s}
+@keyframes bob{50%{translate:0 -10px}}
+.phone{transition:transform .4s var(--ease);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));animation:bob 6s ease-in-out infinite}
+
+/* marquee */
+.marq{overflow:hidden;padding-block:26px;margin-top:30px}
+.band{display:flex;margin-inline:-30px;transform:rotate(-2deg);background:var(--lime)}
+.band.dk{background:var(--ink);color:var(--paper);transform:rotate(1.4deg);margin-top:-4px}
+.band .row{display:flex;width:max-content;animation:mq 34s linear infinite}
+.band.dk .row{animation-direction:reverse;animation-duration:40s}
+.band span{font-size:clamp(26px,6vw,46px);font-weight:300;letter-spacing:-.02em;padding:10px 0 12px 26px;white-space:nowrap;display:flex;align-items:center;gap:26px}
+.band span b{font-weight:700}
+.band span svg{width:.55em;height:.55em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* reality vs dream */
+.real{background:var(--mist);border-radius:var(--r-lg);padding:20px;margin-top:40px}
+@media(min-width:720px){.real{padding:32px}}
+.real-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.real-stage{position:relative;height:260px;display:grid;place-items:center;margin-top:10px}
+.cloud{position:absolute;left:50%;top:50%;width:min(460px,100%);height:auto;transform:translate(-50%,-50%) scale(.55);opacity:0;transition:transform .8s var(--ease),opacity .5s}
+.real-stage.dream .cloud{transform:translate(-50%,-50%) scale(1);opacity:1}
+.cloud path{animation:bob 4s ease-in-out infinite}
+.real-card{position:relative;z-index:1;background:var(--ink);color:var(--paper);border-radius:18px;padding:20px 26px;text-align:center;transition:background .5s,color .5s,transform .7s var(--ease),box-shadow .5s;box-shadow:0 24px 40px -24px rgba(0,0,0,.5)}
+.real-stage.dream .real-card{background:transparent;color:var(--ink);transform:translateY(-6px);box-shadow:none}
+.real-de{display:block;font-size:clamp(30px,7.4vw,46px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.real-de .v{transition:background .4s;border-radius:8px;padding:0 4px}
+.real-stage.dream .real-de .v{background:var(--paper)}
+.real-ru{display:block;font-size:14.5px;opacity:.75;margin-top:6px}
+.real-stage.dream .real-ru{max-width:21ch;margin-inline:auto;opacity:.85}
+.bub{position:absolute;border-radius:50%;background:var(--lime);opacity:0;transition:opacity .4s,transform .5s var(--ease);transform:scale(.3)}
+.real-stage.dream .bub{opacity:1;transform:scale(1)}
+.bub.b1{width:26px;height:26px;left:14%;bottom:12%;transition-delay:.15s}
+.bub.b2{width:16px;height:16px;left:8%;bottom:4%;transition-delay:.3s}
+.bub.b3{width:10px;height:10px;left:4%;bottom:-2%;transition-delay:.45s}
+.real-stamp{position:absolute;z-index:2;top:8px;right:6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:8px;border:2px solid var(--ink);transform:rotate(8deg);background:var(--paper);transition:transform .5s var(--ease)}
+.real-stage.dream .real-stamp{transform:rotate(-8deg) scale(1.05);background:var(--lime)}
+.real-note{margin:8px 0 0;font-size:15px;color:var(--ink-2);min-height:1.6em}
+
+/* 4 forms -> 3 bricks */
+.forms{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.forms span{position:relative;font-size:13px;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 9px}
+.forms span::after{content:"";position:absolute;left:6px;right:6px;top:50%;height:2px;background:var(--bad);transform:scaleX(0);transform-origin:left}
+.forms.play span::after{animation:cross .45s var(--ease) forwards}
+.forms.play span:nth-child(2)::after{animation-delay:.25s}.forms.play span:nth-child(3)::after{animation-delay:.5s}.forms.play span:nth-child(4)::after{animation-delay:.75s}
+@keyframes cross{to{transform:scaleX(1)}}
+.bricks{display:flex;flex-direction:column-reverse;align-items:flex-start;gap:6px;margin-top:18px}
+.brick{background:var(--ink);color:var(--lime);font-weight:700;font-size:18px;border-radius:10px;padding:8px 16px;box-shadow:0 8px 0 -2px rgba(0,0,0,.18)}
+.brick:nth-child(2){margin-left:22px}.brick:nth-child(3){margin-left:44px}
+.bricks.play .brick{animation:drop .8s cubic-bezier(.3,1.45,.5,1) backwards}
+.bricks.play .brick:nth-child(2){animation-delay:.9s}.bricks.play .brick:nth-child(3){animation-delay:1.2s}
+.bricks.play .brick:nth-child(1){animation-delay:.6s}
+@keyframes drop{from{opacity:0;transform:translateY(-120px) rotate(-8deg)}}
+
+/* situation icons */
+.sit{position:relative}
+.sic{position:absolute;top:16px;right:16px;width:46px;height:46px}
+.sic svg{width:100%;height:100%;overflow:visible}
+.sic .spin{transform-origin:23px 23px;animation:spin 6s linear infinite}
+.sic .dash{stroke-dasharray:4 5;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-18}}
+.sic .ring{transform-origin:23px 23px;animation:ring 1.6s ease-in-out infinite}
+@keyframes ring{0%,60%,100%{transform:rotate(0)}10%,30%,50%{transform:rotate(-14deg)}20%,40%{transform:rotate(14deg)}}
+.sic .drive{animation:drive 2.6s ease-in-out infinite}
+@keyframes drive{0%{transform:translateX(-10px)}50%{transform:translateX(6px)}100%{transform:translateX(-10px)}}
+.sic .beat{transform-origin:23px 25px;animation:beat 1.2s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(.96)}45%{transform:scale(1.1)}}
+.sic .glow{animation:glow 1.8s ease-in-out infinite}
+@keyframes glow{50%{opacity:.25}}
+.sic .typing circle{animation:typ 1.2s ease-in-out infinite}
+.sic .typing circle:nth-child(2){animation-delay:.15s}.sic .typing circle:nth-child(3){animation-delay:.3s}
+@keyframes typ{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
+.sic .wob{transform-origin:23px 23px;animation:wob 2.4s ease-in-out infinite}
+@keyframes wob{25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}
+
+/* politeness face */
+.pol-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.face{width:92px;height:92px;flex:none;position:relative}
+.face svg{width:100%;height:100%;overflow:visible}
+.face .mouth{transition:d .5s var(--ease)}
+.face .brow{transition:transform .5s var(--ease);transform-box:fill-box;transform-origin:center}
+.face .cheek{transition:opacity .5s}
+.face.wig svg{animation:wig .5s var(--ease)}
+@keyframes wig{30%{transform:rotate(-8deg) scale(1.06)}60%{transform:rotate(6deg)}}
+.hearts{position:absolute;inset:0;pointer-events:none}
+.hearts i{position:absolute;bottom:60%;left:50%;width:14px;height:14px;color:var(--lime);animation:rise 1.6s ease-out forwards}
+.hearts i svg{width:100%;height:100%}
+@keyframes rise{from{opacity:1;transform:translate(0,0) scale(.6)}to{opacity:0;transform:translate(var(--dx),-70px) scale(1.2)}}
+
+/* slot machine */
+.slot{background:var(--ink);color:var(--paper);border-radius:var(--r-lg);padding:20px;position:relative;overflow:hidden}
+@media(min-width:720px){.slot{padding:32px}}
+.slot-lights{display:flex;gap:8px;margin-bottom:16px}
+.slot-lights i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18)}
+.slot.spinning .slot-lights i{animation:lamp .5s steps(1) infinite}
+.slot-lights i:nth-child(even){animation-delay:.25s!important}
+@keyframes lamp{50%{background:var(--lime)}}
+.reels{display:grid;gap:10px}
+@media(min-width:760px){.reels{grid-template-columns:1fr 1fr}}
+.reel{height:96px;border-radius:16px;overflow:hidden;position:relative;background:var(--lime);color:var(--ink)}
+.reel.b{background:var(--paper)}
+.reel::before,.reel::after{content:"";position:absolute;left:0;right:0;height:22px;z-index:1;pointer-events:none}
+.reel::before{top:0;background:linear-gradient(rgba(0,0,0,.22),transparent)}
+.reel::after{bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.22))}
+.strip{will-change:transform}
+.strip div{height:96px;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 16px;font-size:clamp(19px,4.6vw,23px);line-height:1.2;letter-spacing:-.01em}
+.strip b{font-weight:800;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px}
+.slot-ru{margin:16px 0 4px;font-size:17px;min-height:1.6em;color:rgba(255,255,255,.85)}
+.slot-hint{font-size:13.5px;color:rgba(255,255,255,.55);margin:0 0 18px}
+.slot .btn.lime .ar{transition:transform .5s var(--ease)}
+.slot.spinning .btn.lime .ar{transform:rotate(360deg)}
+
+/* confetti */
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:70}
+
+/* heading word reveal + pain strike */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    h2.h .hw{display:inline-block;animation:hw linear both;animation-timeline:view();animation-range:entry calc(var(--i) * 5%) entry calc(45% + var(--i) * 5%)}
+    @keyframes hw{from{opacity:0;transform:translateY(.45em) rotate(4deg)}}
+    .pain .was h3 span{background:linear-gradient(var(--bad),var(--bad)) 0 58%/0% 2px no-repeat;animation:strike linear both;animation-timeline:view();animation-range:entry 70% cover 50%}
+    @keyframes strike{to{background-size:100% 2px}}
+    .pain .now{animation:slideUp linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+    @keyframes slideUp{from{transform:translateY(40px) rotate(-1.5deg);opacity:.2}}
+  }
+}
+.final .btn.lime{animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(207,222,34,.8)}70%{box-shadow:0 0 0 18px rgba(207,222,34,0)}100%{box-shadow:0 0 0 0 rgba(207,222,34,0)}}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M7 7l10 10M17 9v8H9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M11 2.5l1.9 6.3 6.3 1.9-6.3 1.9L11 19l-1.9-6.4-6.3-1.9 6.3-1.9z" fill="currentColor"/><path d="M18.5 14.5l.8 2.4 2.4.8-2.4.8-.8 2.4-.8-2.4-2.4-.8 2.4-.8z" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v15H6.5A2.5 2.5 0 004 20.5zM4 20.5A2.5 2.5 0 016.5 18H20v3H6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M5.5 11a6.5 6.5 0 0013 0M12 17.5V21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="prog" aria-hidden="true"><i id="progbar"></i></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../media/logo.webp" alt="" width="34" height="34">Stellas</a>
+    <nav class="nav-links" aria-label="Разделы">
+      <a href="#s1">Как собирается</a>
+      <a href="#s3">Где нужен</a>
+      <a href="#s7">Тест</a>
+    </nav>
+    <a class="btn" href="#s7">К тесту<span class="ar"><svg><use href="#i-down"/></svg></span></a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero wrap">
+    <div class="hero-grid">
+      <div class="load">
+        <span class="chip"><svg width="12" height="12"><use href="#i-spark"/></svg>Konjunktiv II · уровень B1</span>
+        <h1 class="display">Грамматика всех ваших <b>«бы»</b></h1>
+        <p class="lead">Konjunktiv II пугает названием. На деле это три слова и пара правил. Разберём за 10 минут, с картинками и без таблиц на полэкрана.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#intro">Погнали разбирать<span class="ar"><svg><use href="#i-down"/></svg></span></a>
+          <a class="link" href="#s7">или сразу к тесту</a>
+        </div>
+      </div>
+
+      <div class="stage" id="stage">
+        <div class="wave" aria-hidden="true"><div class="side" id="wl"></div><div class="side" id="wr"></div></div>
+        <span class="orb l o1" aria-hidden="true"><small>sein</small>wäre</span>
+        <span class="orb d o2" aria-hidden="true"><small>haben</small>hätte</span>
+        <span class="orb o3" aria-hidden="true"><small>все остальные</small>würde</span>
+        <div class="phone" role="img" aria-label="Телефон с чатом, где Konjunktiv II представляется сам">
+          <span class="island"></span>
+          <div class="status"><span>9:41</span><span class="sig"><i style="height:5px"></i><i style="height:7px"></i><i style="height:9px"></i><i style="height:11px"></i></span></div>
+          <div class="p-head"><span class="sq"><svg><use href="#i-back"/></svg></span><span>Урок: Konjunktiv II</span><span class="sq"><svg><use href="#i-book"/></svg></span></div>
+          <div class="avatar"><img src="../media/logo.webp" alt=""></div>
+          <div class="p-msg" id="pmsg">Hallo! Ich <b>wäre</b> gern dein Lieblingsthema.</div>
+          <div class="p-tr" id="ptr">Привет! Я бы хотел стать твоей любимой темой.</div>
+          <div class="p-listen"><span class="pill">Слушаю…</span></div>
+          <div class="p-mic"><svg><use href="#i-mic"/></svg></div>
+          <div class="p-input"><span class="txt" id="ptxt">Wer bist du?</span><span class="p-send" id="psend"><svg><use href="#i-send"/></svg></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat l rv"><span class="n" data-count="3">3</span><p>слова держат почти весь разговорный Konjunktiv: <b>wäre, hätte, würde</b></p></div>
+      <div class="stat rv"><span class="n" data-count="2">2</span><p>режима: «ещё можно» и «поезд ушёл». Больше не бывает</p></div>
+      <div class="stat rv"><span class="n" data-count="8">8</span><p>жизненных ситуаций, где без него никак. Разберём все</p></div>
+    </div>
+  </div>
+
+  <div class="marq" aria-hidden="true">
+    <div class="band"><div class="row">
+      <span><b>wäre</b> был бы <svg><use href="#i-spark"/></svg></span><span><b>hätte</b> имел бы <svg><use href="#i-spark"/></svg></span><span><b>würde</b> + инфинитив <svg><use href="#i-spark"/></svg></span><span><b>könnte</b> мог бы <svg><use href="#i-spark"/></svg></span><span><b>müsste</b> должен был бы <svg><use href="#i-spark"/></svg></span>
+      <span><b>wäre</b> был бы <svg><use href="#i-spark"/></svg></span><span><b>hätte</b> имел бы <svg><use href="#i-spark"/></svg></span><span><b>würde</b> + инфинитив <svg><use href="#i-spark"/></svg></span><span><b>könnte</b> мог бы <svg><use href="#i-spark"/></svg></span><span><b>müsste</b> должен был бы <svg><use href="#i-spark"/></svg></span>
+    </div></div>
+    <div class="band dk"><div class="row">
+      <span>Wenn ich Zeit <b>hätte</b>… <svg><use href="#i-spark"/></svg></span><span><b>Könnten</b> Sie bitte… <svg><use href="#i-spark"/></svg></span><span>Fast <b>hätte</b> ich… <svg><use href="#i-spark"/></svg></span><span>An deiner Stelle <b>würde</b> ich… <svg><use href="#i-spark"/></svg></span>
+      <span>Wenn ich Zeit <b>hätte</b>… <svg><use href="#i-spark"/></svg></span><span><b>Könnten</b> Sie bitte… <svg><use href="#i-spark"/></svg></span><span>Fast <b>hätte</b> ich… <svg><use href="#i-spark"/></svg></span><span>An deiner Stelle <b>würde</b> ich… <svg><use href="#i-spark"/></svg></span>
+    </div></div>
+  </div>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <div class="wrap">
+      <div class="split">
+        <div class="prose rv">
+          <p class="one">Давайте честно.</p>
+          <p>Слово Konjunktiv звучит как диагноз.</p>
+          <p>Открываете учебник, а там Präteritum Konjunktiv, Plusquamperfekt Konjunktiv, Konditionalis I, Konditionalis II. Таблица. Сноска к таблице. Звёздочка к сноске.</p>
+          <p>А вы, вообще-то, просто хотели вежливо заказать кофе 🌚</p>
+          <p>Хорошая новость: половину этой красоты немцы в живой речи не используют. Вообще.</p>
+          <p>Konjunktiv II — это просто немецкое «бы». Всё, что нереально, желаемо, упущено или слишком вежливо, чтобы говорить в лоб.</p>
+        </div>
+        <div class="rv">
+          <p class="quote">Konjunktiv II — это не про время. Это про <b>отношение</b>. Вы как бы говорите: <b>«это не по-настоящему»</b>.</p>
+          <div class="who"><span class="av"><img src="../media/logo.webp" alt=""></span><div><strong>Stellas</strong><span>главная мысль урока. Остальное — детали</span></div></div>
+        </div>
+      </div>
+
+      <div class="real" id="real">
+        <div class="real-top">
+          <span class="lbl" style="font-size:18px">Реальность или мечта?</span>
+          <div class="seg" role="group" aria-label="Наклонение">
+            <button type="button" data-r="ind" aria-pressed="true">Indikativ</button>
+            <button type="button" data-r="konj" aria-pressed="false">Konjunktiv II</button>
+          </div>
+        </div>
+        <div class="real-stage" id="realstage" aria-live="polite">
+          <svg class="cloud" viewBox="0 0 460 260" aria-hidden="true"><path d="M96 214 C44 214 26 150 78 132 C62 76 128 44 170 80 C188 30 262 22 290 70 C330 36 404 62 396 118 C446 130 446 206 388 212 C372 236 316 238 296 216 C272 240 206 242 186 218 C160 236 110 236 96 214 Z" fill="#E4F33A" stroke="#131313" stroke-width="2" stroke-dasharray="7 7"/></svg>
+          <i class="bub b1"></i><i class="bub b2"></i><i class="bub b3"></i>
+          <span class="real-stamp" id="realstamp">факт</span>
+          <div class="real-card"><span class="real-de" id="realde">Ich <span class="v">habe</span> Zeit.</span><span class="real-ru" id="realru">У меня есть время. Факт.</span></div>
+        </div>
+        <p class="real-note" id="realnote">Indikativ — это то, что есть на самом деле. Жмите Konjunktiv II и смотрите, что будет.</p>
+      </div>
+
+      <div class="ps">
+        <div class="prob rv">
+          <span class="ib">!</span>
+          <h3>Учебник: 4 формы</h3>
+          <p>Präteritum, Plusquamperfekt, Konditionalis I и II. Каша из терминов, от которой опускаются руки ещё до первой фразы.</p>
+          <div class="forms" id="forms"><span>Präteritum Konj.</span><span>Plusquamperfekt Konj.</span><span>Konditionalis I</span><span>Konditionalis II</span></div>
+        </div>
+        <div class="fold rv">
+          <span class="tab">Решение</span>
+          <span class="ib"><svg><use href="#i-check"/></svg></span>
+          <div class="bricks" id="bricks"><span class="brick">würde</span><span class="brick">hätte</span><span class="brick">wäre</span></div>
+          <h3 style="padding-top:28px">Жизнь: 3 кирпичика</h3>
+          <p><b>wäre</b> и <b>hätte</b> для sein и haben. Модальные: könnte, müsste, sollte. Для всего остального <b>würde + инфинитив</b>. Всё.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 MACHINE -->
+  <section id="s1">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Как это собирается</span><span class="num">01</span></div>
+      <div class="split">
+        <div>
+          <h2 class="h rv">Берём прошедшее и <b>чуть-чуть портим</b></h2>
+          <div class="prose rv">
+            <p>Konjunktiv II делают из Präteritum. Сильным глаголам добавляют умлаут и -e на конце.</p>
+            <p>Слабым… ничего. Они и так совпадают с прошедшим, и в этом вся драма.</p>
+            <p>Выберите глагол и смотрите, как он превращается. По шагам.</p>
+          </div>
+          <div class="callout rv">
+            <span class="ib l"><svg><use href="#i-spark"/></svg></span>
+            <p>Формы вроде <span class="de">führe</span>, <span class="de">stünde</span> или (держитесь) <span class="de">schwömme</span> в разговоре звучат как бабушкина шкатулка. Красиво, пыльно, никто не открывает. Поэтому почти для всех глаголов берут <b>würde + инфинитив</b> и не парятся.</p>
+          </div>
+        </div>
+
+        <div class="machine rv" id="machine">
+          <div class="vchips" role="group" aria-label="Глагол" id="vchips"></div>
+          <div class="vstage" aria-live="polite">
+            <span class="vstep-l" id="vlabel">Инфинитив</span>
+            <div class="vold" id="vold"></div>
+            <div class="vword" id="vword">fahren</div>
+            <p class="vnote" id="vnote">Жмите «Шаг» или просто смотрите.</p>
+            <span id="vtag"></span>
+          </div>
+          <div class="vprog" id="vprog"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="vlabels"><span>Инфинитив</span><span>Präteritum</span><span>Умлаут</span><span>+ e</span><span>В жизни</span></div>
+          <div class="vctl">
+            <button class="btn ghost" id="vreset" type="button">Заново</button>
+            <button class="btn" id="vnext" type="button">Шаг<span class="ar"><svg><use href="#i-arrow"/></svg></span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="split" style="margin-top:56px">
+        <div>
+          <h2 class="h rv">Что реально <b>запомнить</b></h2>
+          <p class="lead rv">Эти формы живые, их говорят каждый день. Всё остальное через würde. Список короткий, честно.</p>
+          <div class="conj rv">
+            <div class="tabs" role="tablist" id="ctabs"></div>
+            <div class="conj-grid" id="cgrid"></div>
+            <p class="small" style="margin:18px 0 0;color:rgba(255,255,255,.6)">Окончания как у Präteritum. Выделили лаймом.</p>
+          </div>
+        </div>
+        <div class="spec">
+          <div class="spec-row rv"><span class="big">w<em>ä</em>re</span><span class="rt">sein<sup>был бы</sup></span></div>
+          <div class="spec-row rv"><span class="big">h<em>ä</em>tte</span><span class="rt">haben<sup>имел бы</sup></span></div>
+          <div class="spec-row rv"><span class="big">w<em>ü</em>rde</span><span class="rt">werden<sup>+ инфинитив</sup><small>«бы» для всех остальных</small></span></div>
+          <div class="spec-row rv"><span class="big">k<em>ö</em>nnte</span><span class="rt">können<sup>мог бы</sup></span></div>
+          <div class="spec-row rv"><span class="big">m<em>ü</em>sste</span><span class="rt">müssen<sup>должен был бы</sup></span></div>
+          <div class="spec-row rv"><span class="big">d<em>ü</em>rfte</span><span class="rt">dürfen<sup>можно было бы</sup></span></div>
+          <div class="spec-row rv"><span class="big">w<em>ü</em>sste</span><span class="rt">wissen<sup>знал бы</sup></span></div>
+          <div class="spec-row rv"><span class="big">m<em>ö</em>chte</span><span class="rt">mögen<sup>хотел бы</sup></span></div>
+          <div class="spec-row rv"><span class="big">sollte</span><span class="rt">sollen<sup>следовало бы</sup><small>без умлаута, это не опечатка</small></span></div>
+          <div class="spec-row rv"><span class="big">wollte</span><span class="rt">wollen<sup>хотел бы</sup><small>тоже без. Два бунтаря</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ROUTE -->
+  <section id="s2">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Сейчас или тогда</span><span class="num">02</span></div>
+      <div class="split">
+        <div>
+          <h2 class="h rv">Два режима: <b>«ещё не вечер»</b> и <b>«поезд ушёл»</b></h2>
+          <div class="prose rv">
+            <p>Привычных времён у Konjunktiv II нет. Зато есть два состояния.</p>
+            <p>Сейчас: ситуацию ещё можно поменять, хотя бы теоретически. Отменили дела, и время появилось.</p>
+            <p>Тогда: всё, проехали. Остаётся только вздыхать красиво, на немецком.</p>
+          </div>
+          <div class="mini rv">
+            <span class="chip gray">Модальные в прошлом</span>
+            <span class="de">Du hättest mich anrufen können.</span>
+            <span class="muted">Мог бы и позвонить.</span>
+            <p style="margin:10px 0 0">hätte + два инфинитива в самом конце. Выглядит странно. Звучит нормально. Запоминаем как есть.</p>
+          </div>
+        </div>
+
+        <div class="route rv" id="route">
+          <div class="seg" role="group" aria-label="Режим">
+            <button type="button" data-mode="now" aria-pressed="true">Сейчас</button>
+            <button type="button" data-mode="past" aria-pressed="false">Тогда</button>
+          </div>
+          <svg viewBox="0 0 600 250" aria-hidden="true">
+            <path class="blob" id="b-past" d="M84 132 C92 96,150 90,182 108 C214 126,218 166,192 188 C166 210,108 208,88 186 C70 166,78 150,84 132 Z"/>
+            <path class="blob on" id="b-now" d="M418 92 C438 58,502 56,528 84 C554 112,544 150,514 166 C484 182,434 174,418 150 C404 128,408 110,418 92 Z"/>
+            <path id="rpath" d="M472 118 C380 20,232 44,138 150" fill="none" stroke="#131313" stroke-width="2" stroke-dasharray="6 7"/>
+            <circle cx="472" cy="118" r="5" fill="#131313"/>
+            <circle cx="138" cy="150" r="5" fill="#131313"/>
+            <g id="rpill">
+              <rect x="232" y="44" width="150" height="36" rx="18" fill="#131313"/>
+              <text id="rpilltext" x="307" y="67" text-anchor="middle" font-family="Urbanist, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">ещё не вечер</text>
+            </g>
+            <text x="138" y="232" text-anchor="middle" font-family="Urbanist, sans-serif" font-size="18" font-weight="600" fill="#131313">Тогда</text>
+            <text x="472" y="206" text-anchor="middle" font-family="Urbanist, sans-serif" font-size="18" font-weight="600" fill="#131313">Сейчас</text>
+            <circle id="rdot" cx="472" cy="118" r="11" fill="#E4F33A" stroke="#131313" stroke-width="3"/>
+          </svg>
+          <div class="sent" id="sent" aria-live="polite"></div>
+          <p class="sent-tr" id="senttr"></p>
+          <div class="formula" id="formula"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SITUATIONS -->
+  <section id="s3">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Где он живёт</span><span class="num">03</span></div>
+      <h2 class="h rv">8 ситуаций, где <b>без него никак</b></h2>
+      <p class="rail-hint">Листайте вбок <svg width="14" height="14"><use href="#i-arrow"/></svg></p>
+      <div class="rail grid4">
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><g class="spin"><path d="M23 6l3.5 12.5L39 22l-12.5 3.5L23 38l-3.5-12.5L7 22l12.5-3.5z" fill="#E4F33A" stroke="#131313" stroke-width="2" stroke-linejoin="round"/></g></svg></span><h3>Мечтаем</h3><p class="ex"><b>Wäre</b> doch schon Freitag!</p><p class="tr">Вот бы уже пятница.</p><p class="nt"><i>!</i>Doch и nur усиливают тоску. Глагол можно поставить первым, можно начать с wenn.</p></article>
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><circle cx="8" cy="23" r="6" fill="#E4F33A" stroke="#131313" stroke-width="2"/><circle cx="38" cy="23" r="6" fill="#131313"/><path class="dash" d="M15 23h16" stroke="#131313" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></span><h3>Если бы… то бы</h3><p class="ex">Wenn ich reich <b>wäre</b>, <b>würde</b> ich im Wald <b>wohnen</b>.</p><p class="tr">Была бы богатой — жила бы в лесу.</p><p class="nt"><i>!</i>Обе половинки нереальны, значит, обе в Konjunktiv.</p></article>
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><g class="ring"><rect x="14" y="6" width="18" height="34" rx="4" fill="#E4F33A" stroke="#131313" stroke-width="2"/><circle cx="23" cy="34" r="2" fill="#131313"/></g><path class="glow" d="M38 12c3 3 3 8 0 11M8 12c-3 3-3 8 0 11" stroke="#131313" stroke-width="2" fill="none" stroke-linecap="round"/></svg></span><h3>Упустили шанс</h3><p class="ex">Du <b>hättest</b> mich anrufen <b>können</b>!</p><p class="tr">Мог бы и позвонить!</p><p class="nt"><i>!</i>Упрёк уровня «мама». Работает безотказно.</p></article>
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><g class="drive"><rect x="6" y="10" width="34" height="22" rx="5" fill="#E4F33A" stroke="#131313" stroke-width="2"/><path d="M10 18h26" stroke="#131313" stroke-width="2"/><circle cx="14" cy="34" r="3.5" fill="#131313"/><circle cx="32" cy="34" r="3.5" fill="#131313"/></g></svg></span><h3>Чуть не</h3><p class="ex">Fast <b>hätte</b> ich den Bus <b>verpasst</b>.</p><p class="tr">Я чуть не опоздала на автобус.</p><p class="nt"><i>!</i>fast / beinahe + hätte / wäre + Partizip II. Чуть не, но пронесло.</p></article>
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><path class="beat" d="M23 38s-14-8.5-14-18a7.5 7.5 0 0114-3.8A7.5 7.5 0 0137 20c0 9.5-14 18-14 18z" fill="#E4F33A" stroke="#131313" stroke-width="2" stroke-linejoin="round"/></svg></span><h3>Вежливо просим</h3><p class="ex"><b>Könnten</b> Sie mir kurz helfen?</p><p class="tr">Не могли бы вы мне помочь?</p><p class="nt"><i>!</i>Смягчает любую просьбу. В Германии это не опция, это выживание.</p></article>
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><circle class="glow" cx="23" cy="19" r="16" fill="#E4F33A"/><path d="M17 27a9 9 0 1112 0c-1.5 1.3-2 2.6-2 4h-8c0-1.4-.5-2.7-2-4z" fill="#FFFFFF" stroke="#131313" stroke-width="2" stroke-linejoin="round"/><path d="M19 35h8M20 39h6" stroke="#131313" stroke-width="2" stroke-linecap="round"/></svg></span><h3>Советуем</h3><p class="ex">An deiner Stelle <b>würde</b> ich <b>kündigen</b>.</p><p class="tr">На твоём месте я бы уволился.</p><p class="nt"><i>!</i>Ещё вариант: Du <b>solltest</b> mehr schlafen. Совет без занудства.</p></article>
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><path d="M8 8h30a4 4 0 014 4v14a4 4 0 01-4 4H20l-8 7v-7H8a4 4 0 01-4-4V12a4 4 0 014-4z" fill="#E4F33A" stroke="#131313" stroke-width="2" stroke-linejoin="round"/><g class="typing"><circle cx="16" cy="19" r="2.4" fill="#131313"/><circle cx="23" cy="19" r="2.4" fill="#131313"/><circle cx="30" cy="19" r="2.4" fill="#131313"/></g></svg></span><h3>Пересказываем</h3><p class="ex">Er sagt, er <b>hätte</b> keine Zeit.</p><p class="tr">Он говорит, что у него (якобы) нет времени.</p><p class="nt"><i>!</i>В разговорной речи часто заменяет Konjunktiv I. И даёт лёгкий привкус «ну-ну».</p></article>
+        <article class="sit rv-x"><span class="qb">“</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 46 46"><g class="wob"><circle cx="23" cy="23" r="17" fill="#E4F33A" stroke="#131313" stroke-width="2"/><rect x="11" y="17" width="10" height="7" rx="2" fill="#131313"/><rect x="25" y="17" width="10" height="7" rx="2" fill="#131313"/><path d="M21 20h4" stroke="#131313" stroke-width="2"/><path d="M17 31q6 3 12-1" stroke="#131313" stroke-width="2" fill="none" stroke-linecap="round"/></g></svg></span><h3>Как будто</h3><p class="ex">Er tut so, als ob er alles <b>wüsste</b>.</p><p class="tr">Он делает вид, будто всё знает.</p><p class="nt"><i>!</i>als ob / als wenn + Konjunktiv II. Для всех всезнаек в вашей жизни.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 POLITENESS -->
+  <section id="s4">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Вежливометр</span><span class="num">04</span></div>
+      <div class="split">
+        <div>
+          <h2 class="h rv">Из сержанта в <b>королеву</b> за пять шагов</h2>
+          <div class="prose rv">
+            <p>Konjunktiv II — главный инструмент немецкой вежливости.</p>
+            <p>Двигайте ползунок и смотрите, как приказ превращается в светскую беседу. Слово одно и то же — вода. Меняется только отношение.</p>
+          </div>
+        </div>
+        <div class="polite rv">
+          <div class="pol-head"><span class="pol-lvl" id="pollvl">Уровень: сержант</span>
+            <div class="face" id="face" aria-hidden="true"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="#E4F33A"/><ellipse class="cheek" cx="32" cy="74" rx="9" ry="5" fill="#F4A58F" opacity="0"/><ellipse class="cheek" cx="88" cy="74" rx="9" ry="5" fill="#F4A58F" opacity="0"/><circle cx="42" cy="54" r="5.5" fill="#131313"/><circle cx="78" cy="54" r="5.5" fill="#131313"/><rect class="brow" id="browl" x="32" y="38" width="20" height="4.5" rx="2.2" fill="#131313"/><rect class="brow" id="browr" x="68" y="38" width="20" height="4.5" rx="2.2" fill="#131313"/><path class="mouth" id="mouth" d="M40 86 Q60 70 80 86" fill="none" stroke="#131313" stroke-width="5" stroke-linecap="round"/></svg><div class="hearts" id="hearts"></div></div></div>
+          <div class="pol-say" id="polsay" aria-live="polite">Gib mir Wasser.</div>
+          <p class="pol-note" id="polnote">Приказ. В кафе за такое могут и не принести.</p>
+          <div class="meter"><div class="meter-bar"><i id="polbar"></i></div><div class="meter-ends"><span>грубо</span><span>очень вежливо</span></div></div>
+          <label class="small" for="polrange" style="position:absolute;left:-9999px">Уровень вежливости</label>
+          <input type="range" id="polrange" min="0" max="4" step="1" value="0">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 WORD ORDER -->
+  <section id="s5">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Порядок слов</span><span class="num">05</span></div>
+      <h2 class="h rv">Куда <b>убегает глагол</b></h2>
+      <div class="wo rv" id="wo">
+        <div class="wo-line" id="woline" aria-live="polite"></div>
+        <p class="wo-cap" id="wocap"></p>
+        <div class="wo-ctl">
+          <div class="dots" id="wodots"></div>
+          <button class="btn" type="button" id="wonext">Дальше<span class="ar"><svg><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 SLOT -->
+  <section id="s-slot">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Генератор «бы»</span><span class="num">06</span></div>
+      <div class="split">
+        <div>
+          <h2 class="h rv">Крутите. Мечтайте. <b>Грамматически правильно</b></h2>
+          <div class="prose rv">
+            <p>Любая половинка слева подходит к любой справа. Потому что обе нереальны, и обе в Konjunktiv.</p>
+            <p>Следите за глаголами: в первой части он уезжает в конец, во второй würde стоит сразу после запятой.</p>
+            <p>Некоторые комбинации получаются дурацкие. Это нормально. Дурацкое запоминается лучше))</p>
+          </div>
+        </div>
+        <div class="slot rv" id="slot">
+          <div class="slot-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="reels">
+            <div class="reel" id="reelA"><div class="strip"></div></div>
+            <div class="reel b" id="reelB"><div class="strip"></div></div>
+          </div>
+          <p class="slot-ru" id="slotru" aria-live="polite"></p>
+          <p class="slot-hint">Подчёркнуты глаголы в Konjunktiv II</p>
+          <button class="btn lime" type="button" id="spin">Крутить<span class="ar"><svg><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 BUILDER -->
+  <section id="s6">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Соберите сами</span><span class="num">07</span></div>
+      <div class="split">
+        <div>
+          <h2 class="h rv">Теория без практики — <b>шляпа</b></h2>
+          <div class="prose rv">
+            <p>Соберите фразу из кусочков. Как в тренажёре, только без регистрации и смс))</p>
+            <p>Ошиблись — ничего страшного. Подскажем, где споткнулись.</p>
+          </div>
+        </div>
+        <div class="builder rv" id="builder">
+          <div class="b-top"><span class="chip">Sentence Builder</span><span class="small muted" id="bcount">1 / 3</span></div>
+          <p class="b-ru" id="bru"></p>
+          <div class="b-ans" id="bans"></div>
+          <div class="b-pool" id="bpool"></div>
+          <p class="b-msg" id="bmsg" aria-live="polite"></p>
+          <div class="b-ctl"><button type="button" class="b-reset" id="breset">Сброс</button><button type="button" class="b-check" id="bcheck">Проверить</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 QUIZ -->
+  <section id="s7">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Проверка</span><span class="num">08</span></div>
+      <div class="split">
+        <div>
+          <h2 class="h rv">Шесть вопросов. <b>Мир не рухнет</b></h2>
+          <p class="lead rv">Ошибаться можно. У каждого ответа разбор: почему так, а не иначе.</p>
+        </div>
+        <div class="quiz rv" id="quiz" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 CHEAT -->
+  <section id="s8">
+    <div class="wrap">
+      <div class="sec-top"><span class="lbl">Шпаргалка</span><span class="num">09</span></div>
+      <h2 class="h rv">Сохраните себе. <b>А то знаю я вас</b></h2>
+      <p class="lead rv" style="margin-bottom:26px">Закроете вкладку, а через неделю в кафе снова «Ich will».</p>
+      <div class="split">
+        <div class="cheat">
+          <div class="ch-card rv"><span class="t">Мечта</span><p class="f"><mark>Wäre</mark> doch … ! / Wenn … doch <mark>hätte</mark>!</p><p class="e">Wäre doch schon Sommer!</p></div>
+          <div class="ch-card rv"><span class="t">Нереально сейчас</span><p class="f">Wenn … <mark>hätte</mark>, <mark>würde</mark> … + Inf.</p><p class="e">Wenn ich Zeit hätte, würde ich kommen.</p></div>
+          <div class="ch-card rv"><span class="t">Нереально тогда</span><p class="f">Wenn … Part. II <mark>hätte</mark>, <mark>wäre</mark> … Part. II</p><p class="e">Wenn ich Zeit gehabt hätte, wäre ich gekommen.</p></div>
+          <div class="ch-card rv"><span class="t">Вежливость</span><p class="f"><mark>Könnten</mark> / <mark>Würden</mark> / <mark>Hätten</mark> Sie …?</p><p class="e">Hätten Sie kurz Zeit?</p></div>
+          <div class="ch-card rv"><span class="t">Совет</span><p class="f">An deiner Stelle <mark>würde</mark> ich … / Du <mark>solltest</mark> …</p><p class="e">Du solltest das probieren.</p></div>
+          <div class="ch-card rv"><span class="t">Чуть не</span><p class="f">Fast / Beinahe <mark>hätte</mark> / <mark>wäre</mark> … Part. II</p><p class="e">Beinahe wäre ich hingefallen.</p></div>
+        </div>
+        <div class="poster-wrap rv" aria-label="Постер-шпаргалка: wäre, hätte, würde">
+          <div class="wires"><i></i><i></i></div>
+          <div class="poster">
+            <div class="roman">II</div>
+            <svg viewBox="0 0 300 240" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C70 20,190 0,300 24 L300 240 L0 240 Z" fill="#E4F33A"/></svg>
+            <div class="pt"><small>stellas · шпаргалка на холодильник</small><div>Wäre. Hätte. Würde.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="prose rv" style="margin-top:34px">
+        <p class="one">Вот и всё.</p>
+        <p>Серьёзно, это весь Konjunktiv II для жизни. Остальное — для филологов и любителей бабушкиных шкатулок))</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../media/logo.webp" alt="" width="28" height="28">Stellas</a>
+    <span>Немецкий от A0 до C1 · © 2026 Stellas</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const onView=(el,cb,th=.35)=>{ if(!el) return; if(!('IntersectionObserver' in window)){cb();return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ io.disconnect(); cb(); } }),{threshold:th}); io.observe(el); };
+const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+/* nav border */
+const nav=$('#nav'); addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>8),{passive:true});
+
+/* ---------- waveform ---------- */
+(function(){
+  const mk=(host,n,rev)=>{ for(let i=0;i<n;i++){ const b=document.createElement('i'); const k=rev?n-i:i; const h=18+Math.abs(Math.sin(k*1.7))*62+(k%5===0?20:0); b.style.height=Math.min(100,h)+'%'; b.style.animationDelay=(-(k*97)%1600)+'ms'; host.appendChild(b);} };
+  mk($('#wl'),22,false); mk($('#wr'),22,true);
+})();
+
+/* ---------- hero chat ---------- */
+(function(){
+  const CHAT=[
+    {q:'Wer bist du?', a:'Hallo! Ich <b>wäre</b> gern dein Lieblingsthema.', t:'Привет! Я бы хотел стать твоей любимой темой.'},
+    {q:'Du machst mir Angst…', a:'Wenn du mich <b>kennen würdest</b>, <b>hättest</b> du keine Angst.', t:'Если бы ты меня знал, ты бы не боялся.'},
+    {q:'Na gut. Und jetzt?', a:'<b>Könnten</b> wir es kurz versuchen? Zehn Minuten.', t:'Может, попробуем? Десять минут.'}
+  ];
+  const msg=$('#pmsg'), tr=$('#ptr'), txt=$('#ptxt'), send=$('#psend'), stage=$('#stage');
+  if(reduce) return;
+  const words=a=>a.split(/(<b>.*?<\/b>)/).flatMap(p=>p.startsWith('<b>')?p.slice(3,-4).split(' ').map(w=>[w,1]):p.split(' ').filter(Boolean).map(w=>[w,0]));
+  let i=0, timer;
+  const wait=ms=>new Promise(r=>timer=setTimeout(r,ms));
+  async function loop(){
+    while(true){
+      await wait(3600);
+      i=(i+1)%CHAT.length; const c=CHAT[i];
+      txt.textContent='';
+      for(const ch of c.q){ txt.textContent+=ch; await wait(55); }
+      await wait(350); send.classList.add('go'); await wait(160); send.classList.remove('go');
+      txt.textContent=''; tr.style.opacity=0; stage.classList.add('talk');
+      msg.innerHTML=words(c.a).map(([w,b],k)=>`<span class="w" style="animation-delay:${k*80}ms">${b?'<b>'+esc(w)+'</b>':esc(w)}</span>`).join(' ');
+      await wait(words(c.a).length*80+400);
+      tr.textContent=c.t; tr.style.opacity=1;
+      await wait(900); stage.classList.remove('talk');
+    }
+  }
+  loop();
+})();
+
+/* ---------- count up ---------- */
+$$('[data-count]').forEach(el=>{
+  const to=+el.dataset.count, suf=el.dataset.suffix||'';
+  if(reduce || el.getBoundingClientRect().top<innerHeight) return;
+  onView(el,()=>{ const t0=performance.now(), d=1200; const f=now=>{ const k=Math.min(1,(now-t0)/d), e=1-Math.pow(1-k,3); el.textContent=Math.round(to*e)+(k===1?suf:''); if(k<1) requestAnimationFrame(f); }; el.textContent='0'; requestAnimationFrame(f); },.5);
+});
+
+/* ---------- 01 verb machine ---------- */
+(function(){
+  const V={
+    fahren:{s:['fahren','fuhr','führ','führe'],fin:'würde fahren',ok:false,n:['Сильный глагол. Сейчас будет магия.','Präteritum: fuhr','u → ü. Умлаут на месте','+ e на конце. Вот он, führe','Führe в разговоре звучит как из сказки. Говорят würde fahren.']},
+    sein:{s:['sein','war','wär','wäre'],fin:'wäre',ok:true,n:['Главный герой урока.','Präteritum: war','a → ä','+ e. Готово: wäre','Так и говорят. Эту форму оставляем.']},
+    haben:{s:['haben','hatte','hätte','hätte'],fin:'hätte',ok:true,n:['Второй главный герой.','Präteritum: hatte','a → ä','-e уже есть. Ничего не трогаем','Живёт и здравствует. Оставляем.']},
+    wissen:{s:['wissen','wusste','wüsste','wüsste'],fin:'wüsste',ok:true,n:['Любимчик немцев.','Präteritum: wusste','u → ü','-e уже на месте','Ich wüsste nicht… Звучит, живёт, используем.']},
+    kommen:{s:['kommen','kam','käm','käme'],fin:'käme',ok:true,n:['Сильный глагол.','Präteritum: kam','a → ä','+ e: käme','Встречается часто. Но würde kommen тоже норм.']},
+    gehen:{s:['gehen','ging','ging','ginge'],fin:'würde gehen',ok:false,n:['Сильный глагол.','Präteritum: ging','На i умлаут не ставится. Пропускаем','+ e: ginge','Ginge поймут, но в жизни скажут würde gehen.']},
+    fragen:{s:['fragen','fragte','fragte','fragte'],fin:'würde fragen',ok:false,n:['Слабый глагол. Смотрите внимательно.','Präteritum: fragte','Умлаута нет. Слабым не положено','-e уже есть. И… всё','fragte = обычное прошедшее. Не отличить. Поэтому würde fragen.']}
+  };
+  const L=['Инфинитив','Präteritum','Умлаут','Окончание -e','В живой речи'];
+  const chips=$('#vchips'), word=$('#vword'), note=$('#vnote'), lab=$('#vlabel'), old=$('#vold'), tag=$('#vtag'), prog=$$('#vprog i');
+  let verb='fahren', step=0, auto;
+  Object.keys(V).forEach(k=>{ const b=document.createElement('button'); b.type='button'; b.className='vchip'; b.innerHTML=k+(k==='fragen'?'<small>слабый</small>':''); b.setAttribute('aria-pressed',k===verb); b.onclick=()=>{ verb=k; $$('.vchip',chips).forEach(x=>x.setAttribute('aria-pressed',x===b)); play(); }; chips.appendChild(b); });
+  function render(){
+    const v=V[verb]; lab.textContent=L[step]; note.textContent=v.n[step]; tag.innerHTML=''; old.textContent='';
+    prog.forEach((p,i)=>p.classList.toggle('on',i<=step));
+    if(step<4){
+      const w=v.s[step], prev=step>0?v.s[step-1]:null; word.classList.remove('fin');
+      word.innerHTML=[...w].map((c,i)=>{ let cls='ch'; if(step===0) cls+=' in'; else if(step>1 && (i>=prev.length || prev[i]!==c)) cls+=' chg'; else if(step===1) cls+=' in'; return `<span class="${cls}" style="animation-delay:${(step<2?i*45:0)}ms">${c}</span>`; }).join('');
+      if(step>1 && w===prev){ tag.innerHTML='<span class="vtag no">= без изменений</span>'; }
+    } else {
+      word.classList.add('fin');
+      if(!v.ok) old.textContent=v.s[3];
+      word.innerHTML=[...v.fin].map((c,i)=>`<span class="ch in" style="animation-delay:${i*35}ms">${c===' '?'&nbsp;':c}</span>`).join('');
+      tag.innerHTML=v.ok?'<span class="vtag ok">✓ так и говорят</span>':'<span class="vtag no">→ würde + инфинитив</span>';
+    }
+  }
+  function next(){ step=(step+1)%5; render(); }
+  function play(){ clearInterval(auto); step=0; render(); if(reduce) return; auto=setInterval(()=>{ if(step>=4){ clearInterval(auto); return;} next(); },1500); }
+  $('#vnext').onclick=()=>{ clearInterval(auto); next(); };
+  $('#vreset').onclick=()=>{ clearInterval(auto); step=0; render(); };
+  render();
+  onView($('#machine'),play,.5);
+})();
+
+/* ---------- conjugation tabs ---------- */
+(function(){
+  const P=['ich','du','er/sie','wir','ihr','sie/Sie'];
+  const C={'wäre':['wär',['e','st','e','en','t','en']],'hätte':['hätt',['e','est','e','en','et','en']],'würde':['würd',['e','est','e','en','et','en']],'könnte':['könnt',['e','est','e','en','et','en']]};
+  const tabs=$('#ctabs'), grid=$('#cgrid');
+  const show=k=>{ $$('button',tabs).forEach(b=>b.setAttribute('aria-selected',b.dataset.k===k)); const [st,en]=C[k]; grid.innerHTML=P.map((p,i)=>`<div style="animation-delay:${i*60}ms"><span>${p}</span>${st}<mark>${en[i]}</mark></div>`).join(''); };
+  Object.keys(C).forEach(k=>{ const b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab'); b.dataset.k=k; b.textContent=k; b.onclick=()=>show(k); tabs.appendChild(b); });
+  show('wäre');
+})();
+
+/* ---------- 02 route ---------- */
+(function(){
+  const path=$('#rpath'), dot=$('#rdot'), len=path.getTotalLength(), bNow=$('#b-now'), bPast=$('#b-past'), pill=$('#rpilltext');
+  const sent=$('#sent'), tr=$('#senttr'), fo=$('#formula');
+  const M={
+    now:{w:[['Wenn'],['ich'],['Zeit'],['hätte,',1],['würde',1],['ich'],['kommen.',1]],t:'Если бы было время, я бы пришла. Ещё не вечер.',f:['hätte / wäre / würde','+','Infinitiv'],pill:'ещё не вечер',p:0},
+    past:{w:[['Wenn'],['ich'],['Zeit'],['gehabt',1],['hätte,',1],['wäre',1],['ich'],['gekommen.',1]],t:'Если бы тогда было время, я бы пришла. Но всё, проехали.',f:['hätte / wäre','+','Partizip II'],pill:'поезд ушёл',p:1}
+  };
+  let p=0, raf, mode='now';
+  const place=v=>{ const pt=path.getPointAtLength(v*len); dot.setAttribute('cx',pt.x); dot.setAttribute('cy',pt.y); };
+  const move=t=>{ cancelAnimationFrame(raf); if(reduce){p=t;place(p);return;} const s=p,t0=performance.now(),d=1200; const f=now=>{ const k=Math.min(1,(now-t0)/d), e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2; p=s+(t-s)*e; place(p); if(k<1) raf=requestAnimationFrame(f); }; raf=requestAnimationFrame(f); };
+  function set(m,first){
+    mode=m; const d=M[m];
+    $$('.seg button',$('#route')).forEach(b=>b.setAttribute('aria-pressed',b.dataset.mode===m));
+    bNow.classList.toggle('on',m==='now'); bPast.classList.toggle('on',m==='past'); pill.textContent=d.pill;
+    sent.innerHTML=d.w.map(([w,h],i)=>`<span class="w${h?' hl':''}" style="animation-delay:${first?0:i*70}ms">${w}</span>`).join('');
+    tr.textContent=d.t;
+    fo.innerHTML=d.f.map((x,i)=>`<span class="${i===0?'k':''}">${x}</span>`).join('');
+    if(!first) move(d.p);
+  }
+  $$('.seg button',$('#route')).forEach(b=>b.onclick=()=>{ demoDone=true; set(b.dataset.mode); });
+  let demoDone=false;
+  set('now',true); place(0);
+  onView($('#route'),()=>{ if(reduce) return; setTimeout(()=>{ if(!demoDone) set('past'); },1100); },.55);
+})();
+
+/* ---------- 04 politeness ---------- */
+(function(){
+  const P=[
+    ['Gib mir Wasser.','Уровень: сержант','Приказ. В кафе за такое могут и не принести.',[]],
+    ['Ich will Wasser.','Уровень: пятилетка в супермаркете','Грамматически норм. Социально — ну такое.',[]],
+    ['Ich möchte ein Wasser.','Уровень: нормальный человек','Сюрприз: möchte — это тоже Konjunktiv II. От mögen. Вы им давно пользуетесь))',['möchte']],
+    ['Könnten Sie mir bitte ein Wasser bringen?','Уровень: официант улыбается','Könnten + bitte = золотой стандарт любой просьбы.',['Könnten','bitte']],
+    ['Hätten Sie vielleicht ein Glas Wasser für mich?','Уровень: королева в Мюнхене','Hätten + vielleicht. Мягче уже только молча смотреть в глаза.',['Hätten','vielleicht']]
+  ];
+  const r=$('#polrange'), say=$('#polsay'), lvl=$('#pollvl'), note=$('#polnote'), bar=$('#polbar');
+  let touched=false, cur=-1;
+  const set=i=>{ if(i===cur) return; cur=i; const [s,l,n,k]=P[i]; lvl.textContent=l; note.textContent=n; bar.style.width=((i+1)/P.length*100)+'%';
+    say.innerHTML=s.split(' ').map((w,j)=>`<span class="w${k.includes(w.replace(/[.?]/,''))?' k':''}" style="animation-delay:${j*55}ms">${w}</span>`).join(''); r.value=i; face(i); };
+  r.addEventListener('input',()=>{ touched=true; set(+r.value); });
+  set(0);
+  onView(r,()=>{ if(reduce) return; let i=0; const t=setInterval(()=>{ if(touched||i>=3){ clearInterval(t); return;} set(++i); },1500); },.8);
+})();
+
+/* ---------- 05 word order (FLIP) ---------- */
+(function(){
+  const S=[
+    {k:[['w','Wenn'],['i1','ich'],['z','Zeit'],['h','hätte',1],['c',','],['wu','würde',2],['i2','ich'],['k','kommen'],['d','.']],cap:'Wenn — союз с характером: отправляет глагол в самый конец. Hätte уехал в хвост, а würde открывает вторую часть.'},
+    {k:[['w','Wenn'],['i1','ich'],['z','Zeit'],['h','hätte',1],['c',','],['wu','würde',2],['i2','ich'],['k','kommen'],['d','.']],x:'w',cap:'А теперь фокус. Wenn можно просто выкинуть…'},
+    {k:[['h','Hätte',1],['i1','ich'],['z','Zeit'],['c',','],['wu','würde',2],['i2','ich'],['k','kommen'],['d','.']],cap:'…и глагол прыгает на первое место. «Hätte ich Zeit» звучит чуть книжно, но красиво.'},
+    {k:[['i2','Ich'],['wu','würde',2],['k','kommen'],['c',','],['w','wenn'],['i1','ich'],['z','Zeit'],['h','hätte',1],['d','.']],cap:'Или меняем половинки местами. Тогда würde стоит вторым, как в любом нормальном предложении. А hätte всё так же в конце.'}
+  ];
+  const line=$('#woline'), cap=$('#wocap'), dots=$('#wodots'), ids=['w','i1','z','h','c','wu','i2','k','d'], el={};
+  ids.forEach(id=>{ const s=document.createElement('span'); s.className='tk'; el[id]=s; line.appendChild(s); });
+  S.forEach((_,i)=>{ const b=document.createElement('button'); b.type='button'; b.textContent=i+1; b.setAttribute('aria-label','Шаг '+(i+1)); b.onclick=()=>{ stopAuto(); go(i); }; dots.appendChild(b); });
+  let cur=-1, auto;
+  function go(n,anim=true){
+    const st=S[n], first={}; anim=anim&&!reduce;
+    if(anim) ids.forEach(id=>{ if(!el[id].classList.contains('gone')) first[id]=el[id].getBoundingClientRect(); });
+    const present=new Set(st.k.map(t=>t[0]));
+    ids.forEach(id=>{ const s=el[id]; s.style.transition='none'; s.style.transform=''; if(!present.has(id)) s.className='tk gone'; });
+    st.k.forEach(([id,txt,role])=>{ const s=el[id]; s.textContent=txt; s.className='tk'+(role===1?' v1':role===2?' v2':'')+((id==='c'||id==='d')?' p':'')+(st.x===id?' strike':''); line.appendChild(s); });
+    if(anim){
+      st.k.forEach(([id])=>{ const s=el[id], a=first[id]; if(a){ const b=s.getBoundingClientRect(), dx=a.left-b.left, dy=a.top-b.top; if(dx||dy) s.style.transform=`translate(${dx}px,${dy}px)`; } else s.classList.add('enter'); });
+      void line.offsetWidth;
+      st.k.forEach(([id])=>{ el[id].style.transition=''; el[id].style.transform=''; });
+    } else st.k.forEach(([id])=>{ el[id].style.transition=''; });
+    cap.textContent=st.cap; cur=n;
+    $$('button',dots).forEach((b,i)=>b.setAttribute('aria-current',i===n));
+  }
+  const stopAuto=()=>clearInterval(auto);
+  $('#wonext').onclick=()=>{ stopAuto(); go((cur+1)%S.length); };
+  go(0,false);
+  onView($('#wo'),()=>{ if(reduce) return; auto=setInterval(()=>{ if(cur>=S.length-1){ stopAuto(); return; } go(cur+1); },2600); },.5);
+})();
+
+/* ---------- 06 builder ---------- */
+(function(){
+  const T=[
+    {ru:'Если бы я это знала, я бы сказала.',a:['Wenn','ich','es','gewusst','hätte,','hätte','ich','es','gesagt.'],h:'Обе части про прошлое: hätte + Partizip II. Первая половинка заканчивается глаголом.'},
+    {ru:'На твоём месте я бы пошёл к врачу.',a:['An','deiner','Stelle','würde','ich','zum','Arzt','gehen.'],h:'An deiner Stelle стоит первым, значит würde сразу за ним, а gehen в самом конце.'},
+    {ru:'Не могли бы вы говорить помедленнее?',a:['Könnten','Sie','bitte','langsamer','sprechen?'],h:'Вопрос без вопросительного слова: глагол первым, инфинитив в конце.'}
+  ];
+  const ru=$('#bru'), ans=$('#bans'), pool=$('#bpool'), msg=$('#bmsg'), chk=$('#bcheck'), cnt=$('#bcount');
+  let ti=0, picked=[], left=[], solved=false;
+  const shuffle=a=>{ const b=a.map((w,i)=>({w,i})); for(let i=b.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [b[i],b[j]]=[b[j],b[i]]; } if(b.every((x,i)=>x.i===i)) b.reverse(); return b; };
+  function load(){ const t=T[ti]; ru.textContent=t.ru; cnt.textContent=(ti+1)+' / '+T.length; picked=[]; left=shuffle(t.a); solved=false; msg.textContent=''; msg.className='b-msg'; ans.classList.remove('ok'); chk.textContent='Проверить'; chk.classList.remove('next'); draw(); }
+  function draw(){
+    ans.innerHTML=''; pool.innerHTML='';
+    picked.forEach((x,i)=>{ const b=document.createElement('button'); b.type='button'; b.className='b-tok'; b.textContent=x.w; b.onclick=()=>{ if(solved) return; picked.splice(i,1); left.push(x); draw(); }; ans.appendChild(b); });
+    left.forEach((x,i)=>{ const b=document.createElement('button'); b.type='button'; b.className='b-tok'; b.textContent=x.w; b.onclick=()=>{ if(solved) return; left.splice(i,1); picked.push(x); msg.textContent=''; draw(); }; pool.appendChild(b); });
+  }
+  chk.onclick=()=>{
+    if(solved){ ti=(ti+1)%T.length; load(); return; }
+    const t=T[ti];
+    if(picked.length<t.a.length){ msg.className='b-msg err'; msg.textContent='Ещё не все слова на месте.'; return; }
+    if(picked.map(x=>x.w).join(' ')===t.a.join(' ')){ solved=true; ans.classList.add('ok'); msg.className='b-msg ok'; msg.textContent='Идеально. Немцы бы одобрили.'; const ar=ans.getBoundingClientRect(); burst(ar.left+ar.width/2,ar.top+ar.height/2,90); chk.textContent=ti<T.length-1?'Следующее':'Сначала'; chk.classList.add('next'); }
+    else { ans.classList.remove('err'); void ans.offsetWidth; ans.classList.add('err'); msg.className='b-msg err'; msg.textContent='Почти. '+t.h; }
+  };
+  $('#breset').onclick=()=>load();
+  load();
+})();
+
+/* ---------- 07 quiz ---------- */
+(function(){
+  const Q=[
+    {s:'Wenn ich du ___, würde ich das nicht machen.',o:['wäre','bin','war'],c:0,e:'Нереальное условие: я — не ты, и никогда не стану. Значит, wäre.'},
+    {s:'___ Sie mir bitte das Salz geben?',o:['Konnten','Könnten','Können'],c:1,e:'Können тоже можно, но Könnten вежливее. А Konnten — это вообще прошедшее: «могли ли вы (вчера)».'},
+    {s:'Fast ___ ich meinen Pass vergessen.',o:['habe','würde','hätte'],c:2,e:'fast + hätte + Partizip II = «чуть не». Паспорт на месте, пронесло.'},
+    {s:'Wenn er früher losgefahren ___, wäre er pünktlich gewesen.',o:['hätte','wäre','würde'],c:1,e:'losfahren — движение, в Perfekt он с sein. Раз речь про «тогда», берём wäre + Partizip II.'},
+    {s:'Du ___ mich wenigstens anrufen können!',o:['hättest','würdest','wärst'],c:0,e:'Упрёк в прошлом с модальным: hätte + инфинитив + können. Два инфинитива в конце, как и обещали.'},
+    {s:'Er tut so, als ob er alles ___.',o:['weiß','wüsste','würde'],c:1,e:'als ob + Konjunktiv II. Wüsste звучит в разы естественнее, чем würde wissen.'}
+  ];
+  const box=$('#quiz'); let qi=0, score=0;
+  function draw(){
+    if(qi>=Q.length){
+      const v=score===6?'Всё. Вы готовы вежливо ругаться на немецком.':score>=4?'Хорошо! Пара мелочей, и будет идеально.':'Ничего страшного. Пролистайте наверх и попробуйте ещё раз, мир не рухнул.';
+      box.innerHTML=`<div class="q-end"><div class="big">${score}/6</div><p class="lead" style="margin:12px auto 20px">${v}</p><button class="btn" type="button" id="qagain">Ещё раз<span class="ar"><svg><use href="#i-arrow"/></svg></span></button></div>`;
+      $('#qagain').onclick=()=>{ qi=0; score=0; draw(); }; return;
+    }
+    const q=Q[qi];
+    box.innerHTML=`<div class="q-top"><span>Вопрос ${qi+1} из ${Q.length}</span><span>верно: ${score}</span></div><div class="q-bar"><i style="width:${qi/Q.length*100}%"></i></div>
+      <p class="q-q">${q.s.replace('___','<span class="gap" id="qgap">…</span>')}</p><div class="q-opts">${q.o.map((o,i)=>`<button class="q-opt" type="button" data-i="${i}">${o}</button>`).join('')}</div><div id="qexp"></div>`;
+    $$('.q-opt',box).forEach(b=>b.onclick=()=>{
+      const i=+b.dataset.i, ok=i===q.c; if(ok){ score++; const rr=b.getBoundingClientRect(); burst(rr.left+rr.width/2,rr.top+rr.height/2,70); }
+      $$('.q-opt',box).forEach(x=>{ x.disabled=true; if(+x.dataset.i===q.c) x.classList.add('ok'); });
+      if(!ok) b.classList.add('bad');
+      const g=$('#qgap'); g.textContent=q.o[q.c]; g.classList.add('ok');
+      $('#qexp').innerHTML=`<div class="q-exp"><strong>${ok?'Да!':'Не-а.'}</strong>${q.e}</div><button class="btn q-next" type="button" id="qnext">${qi<Q.length-1?'Следующий':'Результат'}<span class="ar"><svg><use href="#i-arrow"/></svg></span></button>`;
+      $('#qnext').onclick=()=>{ qi++; draw(); };
+    });
+  }
+  draw();
+})();
+
+/* ---------- confetti ---------- */
+function burst(x,y,n=60){
+  if(reduce) return;
+  const cv=$('#confetti'), ctx=cv.getContext('2d'), dpr=Math.min(2,devicePixelRatio||1);
+  cv.width=innerWidth*dpr; cv.height=innerHeight*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  const cols=['#E4F33A','#131313','#CFDE22','#FFFFFF'];
+  const P=Array.from({length:n},()=>{ const a=Math.random()*Math.PI*2, v=4+Math.random()*7; return {x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-5,w:5+Math.random()*7,h:3+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[Math.floor(Math.random()*cols.length)],life:0}; });
+  const t0=performance.now();
+  (function f(now){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    P.forEach(p=>{ p.vy+=.28; p.vx*=.985; p.x+=p.vx; p.y+=p.vy; p.r+=p.vr; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r); ctx.fillStyle=p.c; ctx.strokeStyle='#131313'; ctx.lineWidth=p.c==='#FFFFFF'?1:0; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); if(p.c==='#FFFFFF') ctx.strokeRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); });
+    if(now-t0<1800) requestAnimationFrame(f); else ctx.clearRect(0,0,innerWidth,innerHeight);
+  })(t0);
+}
+
+/* ---------- progress fallback ---------- */
+if(!CSS.supports('animation-timeline','scroll()')){
+  const pb=$('#progbar'); const u=()=>{ const h=document.documentElement.scrollHeight-innerHeight; pb.style.transform='scaleX('+(h>0?scrollY/h:0)+')'; };
+  addEventListener('scroll',u,{passive:true}); u();
+}
+
+/* ---------- heading word split ---------- */
+$$('h2.h').forEach(h=>{
+  let i=0;
+  const wrap=node=>{ [...node.childNodes].forEach(c=>{
+    if(c.nodeType===3){ const frag=document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach(t=>{ if(!t) return; if(/^\s+$/.test(t)) frag.appendChild(document.createTextNode(t)); else { const sp=document.createElement('span'); sp.className='hw'; sp.style.setProperty('--i',i++); sp.textContent=t; frag.appendChild(sp);} }); c.replaceWith(frag); }
+    else if(c.nodeType===1) wrap(c);
+  }); };
+  wrap(h); h.classList.remove('rv');
+});
+
+/* ---------- phone tilt ---------- */
+(function(){
+  const st=$('#stage'), ph=$('.phone',st);
+  if(reduce || !matchMedia('(pointer:fine)').matches) return;
+  st.addEventListener('pointermove',e=>{ const r=st.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; ph.style.setProperty('--ry',(x*16)+'deg'); ph.style.setProperty('--rx',(-y*12)+'deg'); });
+  st.addEventListener('pointerleave',()=>{ ph.style.setProperty('--ry','0deg'); ph.style.setProperty('--rx','0deg'); });
+})();
+
+/* ---------- reality vs dream ---------- */
+(function(){
+  const PAIRS=[
+    {ind:['Ich ','habe',' Zeit.'],konj:['Ich ','hätte',' Zeit.'],ir:'У меня есть время. Факт.',kr:'Было бы у меня время… Но его нет.'},
+    {ind:['Ich ','bin',' in Berlin.'],konj:['Ich ','wäre',' in Berlin.'],ir:'Я в Берлине. Реально сижу тут.',kr:'Была бы я в Берлине… А я на работе.'},
+    {ind:['Ich ','kann',' surfen.'],konj:['Ich ','könnte',' surfen.'],ir:'Я умею сёрфить. Правда умею.',kr:'Могла бы сёрфить… если б не боялась воды.'}
+  ];
+  const st=$('#realstage'), de=$('#realde'), ru=$('#realru'), note=$('#realnote'), stamp=$('#realstamp'), btns=$$('#real .seg button');
+  let k=0, mode='ind', auto, touched=false;
+  function set(m){
+    mode=m; const p=PAIRS[k], w=p[m];
+    btns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===m));
+    st.classList.toggle('dream',m==='konj');
+    de.innerHTML=w[0]+'<span class="v">'+w[1]+'</span>'+w[2]; ru.textContent=m==='konj'?p.kr:p.ir;
+    stamp.textContent=m==='konj'?'мечта':'факт';
+    note.textContent=m==='konj'?'Konjunktiv II превращает факт в облачко. Глагол тот же, но уже «не по-настоящему».':'Indikativ — это то, что есть на самом деле. Твёрдо, чётко, без облаков.';
+  }
+  btns.forEach(b=>b.onclick=()=>{ touched=true; clearInterval(auto); set(b.dataset.r); });
+  onView($('#real'),()=>{ if(reduce) return; auto=setInterval(()=>{ if(touched) return clearInterval(auto); if(mode==='konj'){ k=(k+1)%PAIRS.length; set('ind'); } else set('konj'); },2600); },.5);
+})();
+
+/* ---------- forms -> bricks ---------- */
+onView($('#forms'),()=>$('#forms').classList.add('play'),.6);
+onView($('#bricks'),()=>$('#bricks').classList.add('play'),.3);
+
+/* ---------- politeness face ---------- */
+function face(i){
+  const m=$('#mouth'), bl=$('#browl'), br=$('#browr'), f=$('#face'); if(!m) return;
+  const M=['M40 88 Q60 70 80 88','M42 84 Q60 82 78 84','M42 80 Q60 90 78 80','M40 78 Q60 98 80 78','M36 74 Q60 110 84 74'];
+  const B=[[18,-18],[8,-8],[0,0],[-6,6],[-12,12]];
+  m.setAttribute('d',M[i]);
+  bl.style.transform='rotate('+B[i][0]+'deg) translateY('+(i>=3?-3:0)+'px)'; br.style.transform='rotate('+B[i][1]+'deg) translateY('+(i>=3?-3:0)+'px)';
+  $$('.cheek',f).forEach(c=>c.setAttribute('opacity',i>=3?.9:0));
+  f.classList.remove('wig'); void f.offsetWidth; f.classList.add('wig');
+  if(i===4 && !reduce){ const h=$('#hearts'); for(let j=0;j<6;j++){ const e=document.createElement('i'); e.style.setProperty('--dx',((Math.random()-.5)*80)+'px'); e.style.left=(30+Math.random()*40)+'%'; e.style.animationDelay=(j*120)+'ms'; e.innerHTML='<svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 6-8 11-8 11z" fill="currentColor" stroke="#131313" stroke-width="1.5"/></svg>'; h.appendChild(e); setTimeout(()=>e.remove(),2400); } }
+}
+
+/* ---------- slot machine ---------- */
+(function(){
+  const A=[['Wenn ich reich <b>wäre</b>,','Если бы я была богата,'],['Wenn ich mehr Zeit <b>hätte</b>,','Если бы у меня было больше времени,'],['Wenn ich perfekt Deutsch <b>könnte</b>,','Если бы я идеально знала немецкий,'],['Wenn ich eine Katze <b>hätte</b>,','Если бы у меня была кошка,'],['Wenn heute Sonntag <b>wäre</b>,','Если бы сегодня было воскресенье,'],['Wenn ich Chefin <b>wäre</b>,','Если бы я была начальницей,']];
+  const B=[['<b>würde</b> ich im Wald wohnen.','я бы жила в лесу.'],['<b>würde</b> ich jeden Tag Brezeln essen.','я бы ела брецели каждый день.'],['<b>würde</b> ich nie wieder Formulare ausfüllen.','я бы больше никогда не заполняла формуляры.'],['<b>würde</b> ich Goethe im Original lesen.','я бы читала Гёте в оригинале.'],['<b>würde</b> ich den ganzen Tag schlafen.','я бы спала весь день.'],['<b>würde</b> ich allen freitags frei geben.','я бы всем давала выходной по пятницам.']];
+  const H=96, slot=$('#slot'), ru=$('#slotru'), btn=$('#spin');
+  const reels=[[$('#reelA .strip'),A,0],[$('#reelB .strip'),B,1]];
+  const cur=[0,2];
+  const fill=(strip,arr,seq)=>{ strip.innerHTML=seq.map(j=>'<div><span>'+arr[j][0]+'</span></div>').join(''); };
+  reels.forEach(([st,arr],r)=>{ fill(st,arr,[cur[r]]); st.style.transform='translateY(0)'; });
+  const say=()=>{ ru.textContent=A[cur[0]][1]+' '+B[cur[1]][1]; };
+  say();
+  let busy=false;
+  btn.onclick=()=>{
+    if(busy) return; busy=true; slot.classList.add('spinning'); ru.textContent='…';
+    let done=0;
+    reels.forEach(([st,arr],r)=>{
+      let t; do{ t=Math.floor(Math.random()*arr.length); }while(t===cur[r]);
+      const n=12+r*6, seq=[cur[r]]; for(let q=1;q<n;q++) seq.push(Math.floor(Math.random()*arr.length)); seq.push(t);
+      fill(st,arr,seq); st.style.transition='none'; st.style.transform='translateY(0)'; void st.offsetWidth;
+      const d=reduce?10:1500+r*700;
+      st.style.transition='transform '+d+'ms cubic-bezier(.15,.85,.25,1.04)'; st.style.transform='translateY(-'+(seq.length-1)*H+'px)';
+      setTimeout(()=>{ cur[r]=t; st.style.transition='none'; fill(st,arr,[t]); st.style.transform='translateY(0)'; if(++done===2){ busy=false; slot.classList.remove('spinning'); say(); const b=btn.getBoundingClientRect(); burst(b.left+b.width/2,b.top,45); } },d+60);
+    });
+  };
+})();
+})();
+</script>
+
+</body>
+</html>
